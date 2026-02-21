@@ -1,18 +1,18 @@
 ---
 import { Image } from "astro:assets";
-import heroBg from "../assets/hero-bg.jpg";
+import consultorioImg from "../assets/consultorio.png";
 ---
 
 <section
     id="inicio"
-    class="relative min-h-screen flex items-center justify-center overflow-hidden"
+    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary"
 >
-    {/* Background Image */}
-    <div class="absolute inset-0 z-0">
+    {/* Desktop Background (Photo) */}
+    <div class="absolute inset-0 z-0 hidden md:block">
         <Image
-            src={heroBg}
-            alt="Fundo suave para acolhimento psicológico"
-            class="w-full h-full object-cover"
+            src={consultorioImg}
+            alt="Consultório acolhedor da Psicóloga Tatiane Miranda"
+            class="w-full h-full object-cover object-[center_25%]"
             quality="high"
         />
         <div
@@ -21,13 +21,25 @@ import heroBg from "../assets/hero-bg.jpg";
         </div>
     </div>
 
-    <div class="relative z-10 container mx-auto px-4 text-center pt-20 pb-20">
+    {/* Mobile Background (Particles) */}
+    <div class="absolute inset-0 z-0 md:hidden bg-primary overflow-hidden">
+        <canvas id="particle-canvas" class="absolute inset-0 opacity-40"
+        ></canvas>
         <div
-            class="animate-fade-in opacity-0"
+            class="absolute inset-0 bg-gradient-to-b from-primary/20 via-primary/60 to-primary"
+        >
+        </div>
+    </div>
+
+    <div
+        class="relative z-10 container mx-auto px-4 text-center pt-32 md:pt-20 pb-20"
+    >
+        <div
+            class="animate-fade-in opacity-0 flex flex-col items-center"
             style="animation-delay: 0.2s; animation-fill-mode: forwards;"
         >
             <span
-                class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white/90 text-sm font-body tracking-widest uppercase mb-8 border border-white/20"
+                class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white/90 text-xs md:text-sm font-body tracking-widest uppercase mb-8 border border-white/20"
             >
                 Acolhimento & Bem-estar
             </span>
@@ -37,11 +49,13 @@ import heroBg from "../assets/hero-bg.jpg";
             >
                 Psicologia que
                 <br />
-                <span class="italic font-light">Transforma Vidas</span>
+                <span class="text-[#b8860b] italic font-light"
+                    >Transforma Vidas</span
+                >
             </h1>
 
             <p
-                class="font-body text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed"
+                class="font-body text-lg md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed"
             >
                 Um espaço seguro e acolhedor para você se reconectar consigo
                 mesmo e encontrar o equilíbrio emocional que deseja.
@@ -51,18 +65,18 @@ import heroBg from "../assets/hero-bg.jpg";
                 class="flex flex-col sm:flex-row items-center justify-center gap-6"
             >
                 <a
-                    href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar uma consulta."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="group relative inline-flex items-center justify-center px-10 py-5 rounded-full text-lg font-body font-bold text-white transition-all duration-300 overflow-hidden shadow-lg hover:shadow-[0_0_50px_rgba(184,134,11,0.4)]"
+                    href="#contato"
+                    class="group relative inline-flex items-center justify-center px-10 py-5 rounded-full text-lg font-body font-bold text-white transition-all duration-300 overflow-hidden shadow-lg hover:shadow-[0_0_30px_rgba(184,134,11,0.2)] border-2"
+                    style="border-color: #b8860b; background: transparent;"
                 >
-                    <div class="absolute inset-0 z-0 bg-[var(--gradient-gold)]">
-                    </div>
                     <div
-                        class="absolute inset-0 z-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+                        class="absolute inset-0 z-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"
                     >
                     </div>
-                    <span class="relative z-10">AGENDAR CONSULTA</span>
+                    <span
+                        class="relative z-10 uppercase tracking-[0.2em] group-hover:scale-105 transition-transform"
+                        >AGENDAR CONSULTA</span
+                    >
                 </a>
 
                 <a
@@ -107,7 +121,7 @@ import heroBg from "../assets/hero-bg.jpg";
         >
     </div>
 
-    {/* Bottom curve - modern refinement */}
+    {/* Bottom curve */}
     <div class="absolute bottom-0 left-0 right-0 z-0">
         <svg
             viewBox="0 0 1440 120"
@@ -121,3 +135,77 @@ import heroBg from "../assets/hero-bg.jpg";
         </svg>
     </div>
 </section>
+
+<script>
+    function initParticles() {
+        const canvas = document.getElementById(
+            "particle-canvas",
+        ) as HTMLCanvasElement;
+        if (!canvas || window.innerWidth >= 768) return;
+
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles: any[] = [];
+        const particleCount = 40;
+
+        class Particle {
+            x: number;
+            y: number;
+            size: number;
+            speedX: number;
+            speedY: number;
+            opacity: number;
+
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+
+            draw() {
+                if (!ctx) return;
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            if (!ctx) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p) => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
+    // Run on load and on resize
+    initParticles();
+    window.addEventListener("resize", initParticles);
+</script>

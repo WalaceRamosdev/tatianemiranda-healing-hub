@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/logo_transparente_v2.png";
+
 const year = new Date().getFullYear();
 ---
 
@@ -22,13 +25,23 @@ const year = new Date().getFullYear();
             <div class="col-span-1 lg:col-span-2">
                 <a
                     href="#inicio"
-                    class="font-heading text-3xl text-white mb-6 block"
+                    class="flex items-center gap-3 mb-6 block group"
                 >
-                    Tatiane Miranda
-                    <span
-                        class="block text-xs font-body opacity-60 tracking-[0.3em] uppercase mt-1"
-                        >Psicóloga</span
-                    >
+                    <Image
+                        src={logo}
+                        alt="Tatiane Miranda Logo"
+                        class="w-auto h-14 md:h-16 brightness-0 invert"
+                    />
+                    <div>
+                        <span
+                            class="block font-heading text-2xl text-white leading-none"
+                            >Tatiane Miranda</span
+                        >
+                        <span
+                            class="block text-xs font-body text-white/60 tracking-[0.2em] uppercase mt-1"
+                            >Psicóloga</span
+                        >
+                    </div>
                 </a>
                 <p
                     class="font-body text-white/70 max-w-sm mb-8 leading-relaxed"
@@ -117,31 +130,35 @@ const year = new Date().getFullYear();
                     <li>
                         <a
                             href="#inicio"
-                            class="hover:text-white transition-colors"
-                            >Início</a>
+                            class="hover:text-white transition-colors">Início</a
+                        >
                     </li>
                     <li>
                         <a
                             href="#sobre"
                             class="hover:text-white transition-colors"
-                            >Sobre mim</a>
+                            >Sobre mim</a
+                        >
                     </li>
                     <li>
                         <a
                             href="#especialidades"
                             class="hover:text-white transition-colors"
-                            >Especialidades</a>
+                            >Especialidades</a
+                        >
                     </li>
                     <li>
                         <a
                             href="#como-funciona"
                             class="hover:text-white transition-colors"
-                            >Como funciona</a>
+                            >Como funciona</a
+                        >
                     </li>
                     <li>
                         <a
                             href="#faq"
-                            class="hover:text-white transition-colors">FAQ</a>
+                            class="hover:text-white transition-colors">FAQ</a
+                        >
                     </li>
                 </ul>
             </div>
@@ -220,7 +237,8 @@ const year = new Date().getFullYear();
             >
                 <span>Desenvolvido por</span>
                 <a
-                    href="#"
+                    href="https://www.sitesalphacode.com.br"
+                    target="_blank"
                     class="text-white hover:underline transition-all font-bold"
                     >ALPHA CODE</a
                 >

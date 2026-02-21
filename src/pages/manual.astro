@@ -1,0 +1,207 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const sections = [
+    {
+        title: "🎨 Identidade e Estética",
+        desc: "O site foi construído sobre uma base de 'Luxury Branding'. Utilizamos azul marinho para transmitir confiança e o dourado (#b8860b) para sofisticação.",
+        items: [
+            "Tipografia: Rollgates Luxury (títulos) e Lato (leitura).",
+            "Cores: Harmonia entre tons de azul e brilho dourado.",
+            "Imagens: Filtros e composições que valorizam o profissionalismo.",
+        ],
+    },
+    {
+        title: "⚡ Estrutura do Site",
+        desc: "O projeto é uma 'One Page' otimizada para levar o paciente do primeiro contato até o agendamento.",
+        items: [
+            "Hero: Primeira impressão impactante com fundo interativo.",
+            "Especialidades: Cards com pré-preenchimento inteligente de formulário.",
+            "Como Funciona: Passo a passo didático para o paciente.",
+            "FAQ: Perguntas frequentes para reduzir objeções.",
+        ],
+    },
+    {
+        title: "🛠️ Tecnologia Utilizada",
+        desc: "Usamos o **Astro.js**, uma das ferramentas mais modernas da atualidade.",
+        items: [
+            "Velocidade: O site carrega quase instantaneamente.",
+            "Mobile First: Perfeito em qualquer celular ou tablet.",
+            "Segurança: Código blindado contra ataques comuns.",
+            "SEO: Otimizado para aparecer nos resultados do Google.",
+        ],
+    },
+];
+---
+
+<Layout title="Manual do Projeto - Tatiane Miranda">
+    <Header />
+
+    <main class="pt-32 pb-20 bg-brand-light/20">
+        <div class="container mx-auto px-4">
+            {/* Header Manual */}
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-4"
+                >
+                    Guia de Entrega e Suporte
+                </span>
+                <h1 class="font-heading text-4xl md:text-6xl text-primary mb-6">
+                    Manual do seu <span class="text-[#b8860b] italic font-light"
+                        >Novo Site</span>
+                </h1>
+                <p
+                    class="font-body text-lg text-muted-foreground leading-relaxed"
+                >
+                    Olá, Tatiane! Preparamos este manual didático para você
+                    entender cada detalhe da ferramenta que acabamos de
+                    construir para sua presença digital.
+                </p>
+
+                {/* Warning Card */}
+                <div
+                    class="mt-10 p-6 bg-amber-50 border-l-4 border-amber-400 rounded-r-2xl text-left"
+                >
+                    <div class="flex gap-4">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6 text-amber-500 shrink-0"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                            ></path>
+                        </svg>
+                        <div>
+                            <h3 class="font-bold text-amber-800">
+                                Importante: Esboço em Desenvolvimento
+                            </h3>
+                            <p class="text-amber-700 text-sm mt-1">
+                                Este site ainda **não é o resultado final**.
+                                Estamos na fase de ajustes finos. Todas as
+                                solicitações de mudança que você fez estão sendo
+                                aplicadas para garantir que a entrega seja 100%
+                                perfeita.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Content Sections */}
+            <div
+                class="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+                {
+                    sections.map((section) => (
+                        <div class="bg-white p-8 rounded-[40px] shadow-sm border border-primary/5 hover:border-[#b8860b]/30 transition-all duration-300">
+                            <h2 class="font-heading text-2xl text-primary mb-4">
+                                {section.title}
+                            </h2>
+                            <p class="font-body text-muted-foreground mb-6 text-sm">
+                                {section.desc}
+                            </p>
+                            <ul class="space-y-3">
+                                {section.items.map((item) => (
+                                    <li class="flex items-start gap-2 text-sm font-body text-foreground">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="w-5 h-5 text-[#b8860b] shrink-0"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))
+                }
+            </div>
+
+            {/* Support Message */}
+            <div
+                class="max-w-3xl mx-auto mt-20 p-10 bg-primary rounded-[50px] text-center text-white relative overflow-hidden group"
+            >
+                <canvas
+                    id="manual-particles"
+                    class="absolute inset-0 opacity-20 pointer-events-none"
+                ></canvas>
+                <div class="relative z-10">
+                    <h2 class="font-heading text-3xl mb-4">Próximos Passos</h2>
+                    <p
+                        class="font-body opacity-80 mb-8 max-w-lg mx-auto leading-relaxed"
+                    >
+                        Continuamos trabalhando nos ajustes solicitados. Assim
+                        que terminarmos, faremos a publicação final no seu
+                        domínio oficial.
+                    </p>
+                    <a
+                        href="https://wa.me/5500000000000"
+                        class="inline-flex items-center gap-2 bg-[#b8860b] text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform shadow-xl"
+                    >
+                        Acompanhar Alterações
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<script>
+    function initManualParticles() {
+        const canvas = document.getElementById(
+            "manual-particles",
+        ) as HTMLCanvasElement;
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
+        const resize = () => {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        };
+        window.addEventListener("resize", resize);
+        resize();
+        const particles: any[] = [];
+        for (let i = 0; i < 30; i++)
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: Math.random() * 0.4 - 0.2,
+                vy: Math.random() * 0.4 - 0.2,
+                s: Math.random() * 2,
+            });
+        function loop() {
+            if (!ctx) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "white";
+            particles.forEach((p) => {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x > canvas.width) p.x = 0;
+                if (p.y > canvas.height) p.y = 0;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.s, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(loop);
+        }
+        loop();
+    }
+    initManualParticles();
+</script>

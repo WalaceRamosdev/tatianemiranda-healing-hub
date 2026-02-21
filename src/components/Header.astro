@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/logo_transparente_v2.png";
+
 const navLinks = [
     { label: "Início", href: "#inicio" },
     { label: "Sobre", href: "#sobre" },
@@ -13,17 +16,24 @@ const navLinks = [
     class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border"
 >
     <div
-        class="container mx-auto flex items-center justify-between py-4 px-4 md:px-8"
+        class="container mx-auto flex items-center justify-between py-2 px-4 md:px-8"
     >
-        <a
-            href="#inicio"
-            class="font-heading text-xl md:text-2xl text-primary tracking-wide group"
-        >
-            Tatiane Miranda
-            <span
-                class="block text-[10px] md:text-xs font-body text-muted-foreground tracking-[0.2em] uppercase transition-all duration-300 group-hover:text-primary"
-                >Psicóloga</span
-            >
+        <a href="#inicio" class="flex items-center gap-3 group">
+            <Image
+                src={logo}
+                alt="Tatiane Miranda Logo"
+                class="w-auto h-12 md:h-14 transition-transform group-hover:scale-105"
+            />
+            <div class="hidden sm:block">
+                <span
+                    class="block font-heading text-lg text-primary leading-none"
+                    >Tatiane Miranda</span
+                >
+                <span
+                    class="block text-[10px] font-body text-muted-foreground tracking-[0.2em] uppercase transition-all duration-300 group-hover:text-primary"
+                    >Psicóloga</span
+                >
+            </div>
         </a>
 
         {/* Desktop Nav */}
@@ -39,9 +49,7 @@ const navLinks = [
                 ))
             }
             <a
-                href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar uma consulta."
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contato"
                 class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-body font-bold hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
                 Fale Comigo
@@ -107,9 +115,7 @@ const navLinks = [
                 ))
             }
             <a
-                href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar uma consulta."
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contato"
                 class="bg-primary text-white px-8 py-3 rounded-full text-base font-body font-bold hover:opacity-90 transition-opacity mt-4 shadow-md w-full text-center"
             >
                 Fale Comigo

@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import tatianeImg from "../assets/tatiane-miranda.png";
+---
+
 <section
     id="sobre"
     class="section-padding bg-background relative overflow-hidden"
@@ -22,53 +27,16 @@
                 <div
                     class="aspect-[4/5] rounded-2xl bg-muted shadow-premium overflow-hidden relative"
                 >
+                    <Image
+                        src={tatianeImg}
+                        alt="Psicóloga Tatiane Miranda"
+                        class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                    />
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent"
+                        class="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent opacity-60"
                     >
                     </div>
 
-                    <div
-                        class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-white/40 backdrop-blur-[2px]"
-                    >
-                        <div
-                            class="w-20 h-20 rounded-full bg-primary/10 mb-6 flex items-center justify-center animate-pulse"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="32"
-                                height="32"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="hsl(var(--primary))"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="lucide lucide-heart"
-                                ><path
-                                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
-                                ></path></svg
-                            >
-                        </div>
-                        <p class="font-heading text-xl text-primary/80 mb-2">
-                            Tatiane Miranda
-                        </p>
-                        <p
-                            class="font-body text-sm text-muted-foreground uppercase tracking-widest"
-                        >
-                            Psicóloga Clínica
-                        </p>
-
-                        <div class="mt-8 flex gap-3">
-                            <div class="w-2 h-2 rounded-full bg-primary/40">
-                            </div>
-                            <div class="w-2 h-2 rounded-full bg-primary/40">
-                            </div>
-                            <div class="w-2 h-2 rounded-full bg-primary/40">
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Subtle noise texture or pattern */}
                     <div
                         class="absolute inset-x-0 bottom-0 p-6 bg-primary/80 backdrop-blur-md"
                     >
@@ -86,7 +54,8 @@
                     style="animation-delay: 1s;"
                 >
                     <p
-                        class="text-transparent bg-clip-text bg-[var(--gradient-gold)] font-heading text-4xl mb-0 leading-none"
+                        class="font-heading text-5xl mb-1 leading-none"
+                        style="color: #b8860b;"
                     >
                         +10
                     </p>
@@ -108,7 +77,8 @@
                     <h2
                         class="font-heading text-4xl md:text-5xl text-primary leading-tight"
                     >
-                        Uma jornada de <span class="italic font-light"
+                        Uma jornada de <span
+                            class="text-[#b8860b] italic font-light"
                             >acolhimento</span
                         > e transformação
                     </h2>
@@ -208,10 +178,11 @@
                             height="20"
                             viewBox="0 0 24 24"
                             fill="none"
-                            stroke="currentColor"
+                            stroke="#b8860b"
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
+                            class="transition-transform group-hover:translate-x-2"
                             ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"
                             ></path></svg
                         >
