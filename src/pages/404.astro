@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404 — Página não encontrada">
+    <div
+        class="flex min-h-screen items-center justify-center bg-muted selection:bg-primary selection:text-primary-foreground"
+    >
+        <div
+            class="text-center p-8 bg-white rounded-[40px] shadow-premium max-w-md w-full"
+        >
+            <div
+                class="w-24 h-24 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-8"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    ><path
+                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                    ></path><line x1="12" y1="9" x2="12" y2="13"></line><line
+                        x1="12"
+                        y1="17"
+                        x2="12.01"
+                        y2="17"></line></svg
+                >
+            </div>
+            <h1 class="mb-4 text-6xl font-heading text-primary">404</h1>
+            <p
+                class="mb-8 text-xl font-body text-muted-foreground leading-relaxed"
+            >
+                Oops! Não conseguimos encontrar a página que você está
+                procurando.
+            </p>
+            <a
+                href="/"
+                class="inline-block bg-primary text-white px-8 py-3 rounded-full font-body font-bold hover:shadow-lg transition-all"
+            >
+                Voltar para o Início
+            </a>
+        </div>
+    </div>
+</Layout>

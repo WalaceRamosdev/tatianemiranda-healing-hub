@@ -1,0 +1,161 @@
+---
+const navLinks = [
+    { label: "Início", href: "#inicio" },
+    { label: "Sobre", href: "#sobre" },
+    { label: "Especialidades", href: "#especialidades" },
+    { label: "Como Funciona", href: "#como-funciona" },
+    { label: "Depoimentos", href: "#depoimentos" },
+    { label: "FAQ", href: "#faq" },
+];
+---
+
+<header
+    class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border"
+>
+    <div
+        class="container mx-auto flex items-center justify-between py-4 px-4 md:px-8"
+    >
+        <a
+            href="#inicio"
+            class="font-heading text-xl md:text-2xl text-primary tracking-wide group"
+        >
+            Tatiane Miranda
+            <span
+                class="block text-[10px] md:text-xs font-body text-muted-foreground tracking-[0.2em] uppercase transition-all duration-300 group-hover:text-primary"
+                >Psicóloga</span
+            >
+        </a>
+
+        {/* Desktop Nav */}
+        <nav class="hidden lg:flex items-center gap-8">
+            {
+                navLinks.map((link) => (
+                    <a
+                        href={link.href}
+                        class="text-sm font-body text-foreground/80 hover:text-primary transition-all duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all hover:after:w-full"
+                    >
+                        {link.label}
+                    </a>
+                ))
+            }
+            <a
+                href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar uma consulta."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-body font-bold hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+            >
+                Fale Comigo
+            </a>
+        </nav>
+
+        {/* Mobile Toggle */}
+        <button
+            id="menu-toggle"
+            class="lg:hidden text-primary p-2 focus:outline-none"
+            aria-label="Menu"
+        >
+            <svg
+                id="menu-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-menu"
+                ><line x1="4" x2="20" y1="12" y2="12"></line><line
+                    x1="4"
+                    x2="20"
+                    y1="6"
+                    y2="6"></line><line x1="4" x2="20" y1="18" y2="18"
+                ></line></svg
+            >
+            <svg
+                id="close-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-x hidden"
+                ><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
+            >
+        </button>
+    </div>
+
+    {/* Mobile Nav */}
+    <nav
+        id="mobile-nav"
+        class="lg:hidden bg-background border-t border-border hidden transform transition-all duration-300 origin-top scale-y-0 opacity-0"
+    >
+        <div class="flex flex-col items-center gap-4 py-8">
+            {
+                navLinks.map((link) => (
+                    <a
+                        href={link.href}
+                        class="mobile-nav-link text-lg font-body text-foreground/80 hover:text-primary transition-colors"
+                    >
+                        {link.label}
+                    </a>
+                ))
+            }
+            <a
+                href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar uma consulta."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-primary text-white px-8 py-3 rounded-full text-base font-body font-bold hover:opacity-90 transition-opacity mt-4 shadow-md w-full text-center"
+            >
+                Fale Comigo
+            </a>
+        </div>
+    </nav>
+</header>
+
+<script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
+    const menuIcon = document.getElementById("menu-icon");
+    const closeIcon = document.getElementById("close-icon");
+    const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+
+    function toggleMenu() {
+        if (!mobileNav || !menuIcon || !closeIcon) return;
+
+        const isHidden = mobileNav.classList.contains("hidden");
+
+        if (isHidden) {
+            mobileNav.classList.remove("hidden");
+            setTimeout(() => {
+                mobileNav.classList.add("scale-y-100", "opacity-100");
+            }, 10);
+            menuIcon.classList.add("hidden");
+            closeIcon.classList.remove("hidden");
+        } else {
+            mobileNav.classList.remove("scale-y-100", "opacity-100");
+            menuIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+            setTimeout(() => {
+                mobileNav.classList.add("hidden");
+            }, 300);
+        }
+    }
+
+    if (menuToggle) {
+        menuToggle.addEventListener("click", toggleMenu);
+    }
+
+    mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            if (mobileNav && !mobileNav.classList.contains("hidden")) {
+                toggleMenu();
+            }
+        });
+    });
+</script>

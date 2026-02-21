@@ -1,0 +1,114 @@
+---
+const faqs = [
+    {
+        q: "Quanto tempo dura cada sessão?",
+        a: "Cada sessão tem duração de aproximadamente 50 minutos. Esse é o tempo padrão na prática clínica, permitindo um aprofundamento ideal sem ser exaustivo.",
+    },
+    {
+        q: "O atendimento é online ou presencial?",
+        a: "Trabalho com as duas modalidades. O atendimento online é feito via plataforma segura (Google Meet ou similar), garantindo o mesmo sigilo e qualidade do presencial. O consultório físico está localizado em [Cidade/Bairro].",
+    },
+    {
+        q: "Como funciona o sigilo profissional?",
+        a: "O sigilo é garantido pelo Código de Ética do Psicólogo. Tudo o que conversamos é estritamente confidencial, salvo em situações específicas previstas em lei (como risco iminente à vida).",
+    },
+    {
+        q: "Quais são as formas de pagamento?",
+        a: "Aceito pagamentos via Pix, transferência bancária ou cartões (consulte condições). Os recibos podem ser utilizados para solicitação de reembolso em planos de saúde.",
+    },
+    {
+        q: "Com qual frequência ocorrem as sessões?",
+        a: "Idealmente, as sessões são semanais. A regularidade é fundamental para o progresso terapêutico, especialmente nas fases iniciais do processo.",
+    },
+];
+---
+
+<section id="faq" class="section-padding bg-background">
+    <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <span
+                class="text-primary font-body text-sm font-bold uppercase tracking-[0.3em] mb-4 block"
+                >Dúvidas</span
+            >
+            <h2 class="font-heading text-4xl md:text-5xl text-primary mb-6">
+                Perguntas comuns
+            </h2>
+            <p class="font-body text-lg text-muted-foreground">
+                Se ainda tiver alguma questão que não foi respondida aqui, fique
+                à vontade para me enviar uma mensagem.
+            </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+            {
+                faqs.map((faq) => (
+                    <details class="group bg-secondary/20 rounded-2xl border border-primary/5 transition-all duration-300 open:bg-white open:shadow-premium open:border-primary/20">
+                        <summary class="list-none cursor-pointer p-6 md:p-8 flex items-center justify-between font-heading text-xl text-primary select-none outline-none">
+                            <span class="pr-6">{faq.q}</span>
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center group-open:bg-primary group-open:text-white transition-all duration-300">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="transition-transform duration-300 group-open:rotate-180"
+                                >
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </div>
+                        </summary>
+                        <div class="px-6 md:px-8 pb-8 font-body text-muted-foreground leading-relaxed animate-fade-in">
+                            {faq.a}
+                        </div>
+                    </details>
+                ))
+            }
+        </div>
+
+        <div class="mt-20 text-center">
+            <div
+                class="inline-flex flex-col items-center p-8 rounded-[40px] bg-primary text-white shadow-2xl relative overflow-hidden group"
+            >
+                <div
+                    class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-125 transition-transform duration-700"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100"
+                        height="100"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        ><path
+                            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                        ></path></svg
+                    >
+                </div>
+                <h3 class="font-heading text-2xl mb-4 relative z-10">
+                    Ainda tem dúvidas?
+                </h3>
+                <p class="font-body opacity-90 mb-8 relative z-10">
+                    Estou disponível para conversar e explicar melhor como
+                    funciona o meu trabalho.
+                </p>
+                <a
+                    href="https://wa.me/5500000000000"
+                    class="bg-white text-primary px-10 py-4 rounded-full font-body font-bold hover:shadow-xl transition-all relative z-10"
+                >
+                    FALER COM TATIANE
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Hide the default triangle on some browsers */
+    summary::-webkit-details-marker {
+        display: none;
+    }
+</style>
