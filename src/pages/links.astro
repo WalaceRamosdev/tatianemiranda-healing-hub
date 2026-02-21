@@ -6,93 +6,114 @@ import tatianeImg from "../assets/tatiane-miranda.png";
 
 const links = [
     {
-        title: "✨ Agendar Consulta",
-        subtitle: "Conversar diretamente pelo WhatsApp",
+        title: "Agendar Consulta Individual",
+        subtitle: "Atendimento personalizado com acolhimento e sigilo",
         url: "https://wa.me/5521999064502?text=Olá Tatiane! Gostaria de agendar uma consulta.",
-        primary: true,
+        highlight: true,
+        icon: "sparkles",
     },
     {
-        title: "🏠 Site Oficial",
-        subtitle: "Conhecer meu trabalho e especialidades",
+        title: "Website Oficial",
+        subtitle: "Conheça minha trajetória e abordagem terapêutica",
         url: "/",
-        primary: false,
+        highlight: false,
+        icon: "globe",
     },
     {
-        title: "📸 Instagram",
-        subtitle: "Acompanhe conteúdos e reflexões diárias",
+        title: "Instagram",
+        subtitle: "Conteúdos sobre saúde mental e bem-estar",
         url: "https://instagram.com",
-        primary: false,
+        highlight: false,
+        icon: "instagram",
     },
     {
-        title: "💼 LinkedIn",
-        subtitle: "Conexões profissionais e currículo",
-        url: "https://linkedin.com",
-        primary: false,
-    },
-    {
-        title: "📩 E-mail",
-        subtitle: "contato@tatianemiranda.com.br",
-        url: "mailto:contato@tatianemiranda.com.br",
-        primary: false,
+        title: "Canal do WhatsApp",
+        subtitle: "Reflexões semanais e avisos exclusivos",
+        url: "https://wa.me/5521999064502",
+        highlight: false,
+        icon: "message-circle",
     },
 ];
 ---
 
-<Layout title="Tatiane Miranda - Links Úteis">
+<Layout title="Tatiane Miranda | Links Oficiais">
     <main
-        class="min-h-screen bg-primary relative overflow-hidden flex flex-col items-center px-4 py-16"
+        class="min-h-screen bg-[#001220] relative overflow-hidden flex flex-col items-center px-6 py-20 font-body"
     >
-        {/* Background Decorative Elements */}
-        <div
-            class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
-        >
+        {/* Abstract Luxury Background */}
+        <div class="absolute inset-0 z-0">
+            {/* Soft Glows */}
             <div
-                class="absolute -top-[10%] -right-[10%] w-[40%] h-[40%] bg-[#b8860b]/10 blur-[120px] rounded-full"
+                class="absolute top-[-10%] left-[-20%] w-[60%] h-[60%] bg-[#b8860b]/10 blur-[150px] rounded-full animate-pulse"
             >
             </div>
             <div
-                class="absolute -bottom-[10%] -left-[10%] w-[40%] h-[40%] bg-white/5 blur-[120px] rounded-full"
+                class="absolute bottom-[-10%] right-[-20%] w-[60%] h-[60%] bg-[#b8860b]/5 blur-[150px] rounded-full animate-pulse"
+                style="animation-delay: 2s;"
+            >
+            </div>
+
+            {/* Texture */}
+            <div
+                class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"
+            >
+            </div>
+
+            {/* Golden Silk Line */}
+            <div
+                class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#b8860b]/30 to-transparent rotate-12"
             >
             </div>
         </div>
 
-        <div class="relative z-10 w-full max-w-md flex flex-col items-center">
-            {/* Profile Section */}
-            <div class="mb-10 text-center">
-                <div class="relative mb-6">
+        <div class="relative z-10 w-full max-w-sm flex flex-col items-center">
+            {/* Profile Section - Ultra High Ticket Aesthetic */}
+            <div class="mb-14 text-center group">
+                <div class="relative mb-8 pt-4">
+                    {/* Golden Frame Panels */}
                     <div
-                        class="w-32 h-32 rounded-full border-2 border-[#b8860b] p-1 mx-auto relative z-10 overflow-hidden bg-white/10 backdrop-blur-sm"
+                        class="absolute top-0 left-1/2 -translate-x-1/2 w-36 h-36 border border-[#b8860b]/20 rounded-full scale-110 rotate-12 group-hover:rotate-45 transition-transform duration-1000"
+                    >
+                    </div>
+                    <div
+                        class="absolute top-0 left-1/2 -translate-x-1/2 w-36 h-36 border border-[#b8860b]/20 rounded-full scale-110 -rotate-12 group-hover:-rotate-45 transition-transform duration-1000"
+                    >
+                    </div>
+
+                    <div
+                        class="w-32 h-32 rounded-full border-2 border-[#b8860b] p-1 mx-auto relative z-10 overflow-hidden bg-gradient-to-b from-[#b8860b]/20 to-transparent backdrop-blur-sm shadow-[0_0_40px_rgba(184,134,11,0.2)]"
                     >
                         <Image
                             src={tatianeImg}
                             alt="Tatiane Miranda"
-                            class="w-full h-full object-cover rounded-full"
+                            class="w-full h-full object-cover rounded-full grayscale-[0.2] contrast-[1.1]"
                         />
-                    </div>
-                    {/* Pulsing ring */}
-                    <div
-                        class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border border-[#b8860b]/50 animate-ping opacity-20"
-                    >
                     </div>
                 </div>
 
-                <Image
-                    src={logo}
-                    alt="Tatiane Miranda Logo"
-                    class="h-12 w-auto mx-auto mb-4 brightness-0 invert"
-                />
-                <h1 class="font-heading text-2xl text-white mb-2">
-                    Tatiane Miranda
-                </h1>
-                <p
-                    class="font-body text-white/60 text-sm uppercase tracking-[0.2em]"
-                >
-                    Psicóloga Clínica
-                </p>
+                <div class="space-y-3">
+                    <Image
+                        src={logo}
+                        alt="Tatiane Miranda Logo"
+                        class="h-10 w-auto mx-auto brightness-0 invert opacity-90"
+                    />
+                    <h1 class="font-heading text-3xl text-white tracking-tight">
+                        Tatiane Miranda
+                    </h1>
+                    <div class="flex items-center justify-center gap-3">
+                        <span class="h-px w-4 bg-[#b8860b]/50"></span>
+                        <p
+                            class="text-[10px] text-[#b8860b] uppercase tracking-[0.4em] font-bold"
+                        >
+                            Psicóloga Clínica
+                        </p>
+                        <span class="h-px w-4 bg-[#b8860b]/50"></span>
+                    </div>
+                </div>
             </div>
 
-            {/* Links Section */}
-            <div class="w-full space-y-4">
+            {/* Links Section - Sleek Interactive Cards */}
+            <div class="w-full space-y-5">
                 {
                     links.map((link) => (
                         <a
@@ -100,45 +121,113 @@ const links = [
                             target={
                                 link.url.startsWith("http") ? "_blank" : "_self"
                             }
-                            class={`group block w-full p-4 rounded-2xl transition-all duration-300 text-center relative overflow-hidden backdrop-blur-md border ${
-                                link.primary
-                                    ? "bg-[#b8860b] border-[#b8860b] text-white shadow-[0_10px_30px_rgba(184,134,11,0.3)] hover:-translate-y-1"
-                                    : "bg-white/5 border-white/10 text-white/90 hover:bg-white/10 hover:border-white/20 hover:-translate-y-1"
+                            class={`group block w-full p-6 rounded-[2rem] transition-all duration-500 text-left relative overflow-hidden backdrop-blur-xl border ${
+                                link.highlight
+                                    ? "bg-gradient-to-br from-[#b8860b] to-[#8d6708] border-[#b8860b]/30 shadow-[0_20px_40px_rgba(184,134,11,0.2)] hover:shadow-[0_25px_50px_rgba(184,134,11,0.3)] hover:-translate-y-2"
+                                    : "bg-white/[0.03] border-white/10 hover:bg-white/[0.07] hover:border-[#b8860b]/40 hover:-translate-y-1"
                             }`}
                         >
-                            <div class="relative z-10">
-                                <h3
-                                    class={`font-bold ${link.primary ? "text-lg" : "text-base"}`}
-                                >
-                                    {link.title}
-                                </h3>
-                                <p
-                                    class={`text-xs opacity-70 mt-1 ${link.primary ? "text-white" : "text-white/60"}`}
-                                >
-                                    {link.subtitle}
-                                </p>
-                            </div>
-                            {link.primary && (
-                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                            {/* Shimmer Effect for Highlighted Link */}
+                            {link.highlight && (
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none" />
                             )}
+
+                            {/* Hover Border Light */}
+                            {!link.highlight && (
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-r from-[#b8860b]/10 to-transparent pointer-events-none" />
+                            )}
+
+                            <div class="flex items-center justify-between relative z-10">
+                                <div class="space-y-1 pr-4">
+                                    <h3
+                                        class={`font-heading text-xl ${link.highlight ? "text-white" : "text-white/95 group-hover:text-[#b8860b]"} transition-colors duration-300`}
+                                    >
+                                        {link.title}
+                                    </h3>
+                                    <p
+                                        class={`text-[11px] font-light tracking-wide ${link.highlight ? "text-white/80" : "text-white/40 group-hover:text-white/60"} transition-colors duration-300`}
+                                    >
+                                        {link.subtitle}
+                                    </p>
+                                </div>
+
+                                <div
+                                    class={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
+                                        link.highlight
+                                            ? "bg-white/20"
+                                            : "bg-white/5 border border-white/10 group-hover:border-[#b8860b]/50 group-hover:rotate-12"
+                                    }`}
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class={
+                                            link.highlight
+                                                ? "text-white"
+                                                : "text-[#b8860b] group-hover:scale-110"
+                                        }
+                                    >
+                                        <>
+                                            <path d="M5 12h14" />
+                                            <path d="m12 5 7 7-7 7" />
+                                        </>
+                                    </svg>
+                                </div>
+                            </div>
                         </a>
                     ))
                 }
             </div>
 
-            {/* Footer Section */}
-            <div class="mt-16 text-center">
-                <div class="flex items-center justify-center gap-2 mb-4">
-                    <div class="h-px w-8 bg-white/20"></div>
-                    <span
-                        class="text-[10px] text-white/40 uppercase tracking-widest"
-                        >Comprometimento & Ética</span
+            {/* Premium Footer - Discreet & Elegant */}
+            <div class="mt-20 text-center space-y-6">
+                <div
+                    class="flex items-center justify-center gap-6 opacity-40 hover:opacity-100 transition-opacity duration-500"
+                >
+                    <div
+                        class="h-px w-10 bg-gradient-to-r from-transparent to-[#b8860b]"
                     >
-                    <div class="h-px w-8 bg-white/20"></div>
+                    </div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#b8860b"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="animate-pulse"
+                        ><path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                        ></path></svg
+                    >
+                    <div
+                        class="h-px w-10 bg-gradient-to-l from-transparent to-[#b8860b]"
+                    >
+                    </div>
                 </div>
-                <p class="text-[10px] text-white/30 uppercase tracking-[0.3em]">
-                    © {new Date().getFullYear()} Tatiane Miranda
-                </p>
+
+                <div class="space-y-1">
+                    <p
+                        class="text-[9px] text-[#b8860b] uppercase tracking-[0.5em] font-medium opacity-60"
+                    >
+                        Escuta Terapêutica de Luxo
+                    </p>
+                    <p
+                        class="text-[9px] text-white/20 uppercase tracking-[0.3em]"
+                    >
+                        © {new Date().getFullYear()} Tatiane Miranda
+                    </p>
+                </div>
             </div>
         </div>
     </main>
@@ -150,7 +239,22 @@ const links = [
             }
         }
         .animate-shimmer {
-            animation: shimmer 2s infinite;
+            animation: shimmer 2.5s infinite;
+        }
+
+        /* Smooth page transition entry */
+        main {
+            animation: fadeIn 1.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </Layout>
