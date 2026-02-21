@@ -1,0 +1,156 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import logo from "../assets/logo_transparente_v2.png";
+import tatianeImg from "../assets/tatiane-miranda.png";
+
+const links = [
+    {
+        title: "✨ Agendar Consulta",
+        subtitle: "Conversar diretamente pelo WhatsApp",
+        url: "https://wa.me/5521999064502?text=Olá Tatiane! Gostaria de agendar uma consulta.",
+        primary: true,
+    },
+    {
+        title: "🏠 Site Oficial",
+        subtitle: "Conhecer meu trabalho e especialidades",
+        url: "/",
+        primary: false,
+    },
+    {
+        title: "📸 Instagram",
+        subtitle: "Acompanhe conteúdos e reflexões diárias",
+        url: "https://instagram.com",
+        primary: false,
+    },
+    {
+        title: "💼 LinkedIn",
+        subtitle: "Conexões profissionais e currículo",
+        url: "https://linkedin.com",
+        primary: false,
+    },
+    {
+        title: "📩 E-mail",
+        subtitle: "contato@tatianemiranda.com.br",
+        url: "mailto:contato@tatianemiranda.com.br",
+        primary: false,
+    },
+];
+---
+
+<Layout title="Tatiane Miranda - Links Úteis">
+    <main
+        class="min-h-screen bg-primary relative overflow-hidden flex flex-col items-center px-4 py-16"
+    >
+        {/* Background Decorative Elements */}
+        <div
+            class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
+        >
+            <div
+                class="absolute -top-[10%] -right-[10%] w-[40%] h-[40%] bg-[#b8860b]/10 blur-[120px] rounded-full"
+            >
+            </div>
+            <div
+                class="absolute -bottom-[10%] -left-[10%] w-[40%] h-[40%] bg-white/5 blur-[120px] rounded-full"
+            >
+            </div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-md flex flex-col items-center">
+            {/* Profile Section */}
+            <div class="mb-10 text-center">
+                <div class="relative mb-6">
+                    <div
+                        class="w-32 h-32 rounded-full border-2 border-[#b8860b] p-1 mx-auto relative z-10 overflow-hidden bg-white/10 backdrop-blur-sm"
+                    >
+                        <Image
+                            src={tatianeImg}
+                            alt="Tatiane Miranda"
+                            class="w-full h-full object-cover rounded-full"
+                        />
+                    </div>
+                    {/* Pulsing ring */}
+                    <div
+                        class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border border-[#b8860b]/50 animate-ping opacity-20"
+                    >
+                    </div>
+                </div>
+
+                <Image
+                    src={logo}
+                    alt="Tatiane Miranda Logo"
+                    class="h-12 w-auto mx-auto mb-4 brightness-0 invert"
+                />
+                <h1 class="font-heading text-2xl text-white mb-2">
+                    Tatiane Miranda
+                </h1>
+                <p
+                    class="font-body text-white/60 text-sm uppercase tracking-[0.2em]"
+                >
+                    Psicóloga Clínica
+                </p>
+            </div>
+
+            {/* Links Section */}
+            <div class="w-full space-y-4">
+                {
+                    links.map((link) => (
+                        <a
+                            href={link.url}
+                            target={
+                                link.url.startsWith("http") ? "_blank" : "_self"
+                            }
+                            class={`group block w-full p-4 rounded-2xl transition-all duration-300 text-center relative overflow-hidden backdrop-blur-md border ${
+                                link.primary
+                                    ? "bg-[#b8860b] border-[#b8860b] text-white shadow-[0_10px_30px_rgba(184,134,11,0.3)] hover:-translate-y-1"
+                                    : "bg-white/5 border-white/10 text-white/90 hover:bg-white/10 hover:border-white/20 hover:-translate-y-1"
+                            }`}
+                        >
+                            <div class="relative z-10">
+                                <h3
+                                    class={`font-bold ${link.primary ? "text-lg" : "text-base"}`}
+                                >
+                                    {link.title}
+                                </h3>
+                                <p
+                                    class={`text-xs opacity-70 mt-1 ${link.primary ? "text-white" : "text-white/60"}`}
+                                >
+                                    {link.subtitle}
+                                </p>
+                            </div>
+                            {link.primary && (
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                            )}
+                        </a>
+                    ))
+                }
+            </div>
+
+            {/* Footer Section */}
+            <div class="mt-16 text-center">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <div class="h-px w-8 bg-white/20"></div>
+                    <span
+                        class="text-[10px] text-white/40 uppercase tracking-widest"
+                        >Comprometimento & Ética</span
+                    >
+                    <div class="h-px w-8 bg-white/20"></div>
+                </div>
+                <p class="text-[10px] text-white/30 uppercase tracking-[0.3em]">
+                    © {new Date().getFullYear()} Tatiane Miranda
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        .animate-shimmer {
+            animation: shimmer 2s infinite;
+        }
+    </style>
+</Layout>
