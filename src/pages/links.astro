@@ -8,7 +8,7 @@ const links = [
     {
         title: "Agendar Consulta Individual",
         subtitle: "Atendimento personalizado com acolhimento e sigilo",
-        url: "https://wa.me/5521999064502?text=Olá Tatiane! Gostaria de agendar uma consulta.",
+        url: "https://wa.me/5521999064502?text=Olá! Gostaria de mais informações sobre o atendimento.",
         highlight: true,
         icon: "sparkles",
     },
@@ -36,7 +36,10 @@ const links = [
 ];
 ---
 
-<Layout title="Tatiane Miranda | Links Oficiais">
+<Layout
+    title="Tatiane Miranda | Links Oficiais e Agendamento"
+    description="Acesse todos os links oficiais da Psicóloga Tatiane Miranda. Agendamento de consultas, redes sociais e conteúdos exclusivos sobre saúde mental."
+>
     <main
         class="min-h-screen bg-[#001220] relative overflow-hidden flex flex-col items-center px-6 py-20 font-body"
     >
@@ -85,7 +88,7 @@ const links = [
                     >
                         <Image
                             src={tatianeImg}
-                            alt="Tatiane Miranda"
+                            alt="Foto de perfil da Psicóloga Tatiane Miranda"
                             class="w-full h-full object-cover rounded-full grayscale-[0.2] contrast-[1.1]"
                         />
                     </div>
@@ -94,19 +97,26 @@ const links = [
                 <div class="space-y-3">
                     <Image
                         src={logo}
-                        alt="Tatiane Miranda Logo"
+                        alt="Logotipo Tatiane Miranda"
                         class="h-10 w-auto mx-auto brightness-0 invert opacity-90"
                     />
                     <h1 class="font-heading text-3xl text-white tracking-tight">
-                        Tatiane Miranda
+                        Tatiane Miranda | Links Oficiais
                     </h1>
                     <div class="flex items-center justify-center gap-3">
                         <span class="h-px w-4 bg-[#b8860b]/50"></span>
-                        <p
-                            class="text-[10px] text-[#b8860b] uppercase tracking-[0.4em] font-bold"
-                        >
-                            Psicóloga Clínica
-                        </p>
+                        <div class="flex flex-col items-center gap-1">
+                            <p
+                                class="text-[10px] text-[#b8860b] uppercase tracking-[0.4em] font-bold"
+                            >
+                                Psicóloga Clínica
+                            </p>
+                            <p
+                                class="text-[9px] text-white/30 uppercase tracking-[0.2em]"
+                            >
+                                CRP 05/73753
+                            </p>
+                        </div>
                         <span class="h-px w-4 bg-[#b8860b]/50"></span>
                     </div>
                 </div>
@@ -225,7 +235,13 @@ const links = [
                     <p
                         class="text-[9px] text-white/20 uppercase tracking-[0.3em]"
                     >
-                        © {new Date().getFullYear()} Tatiane Miranda
+                        © {new Date().getFullYear()} Tatiane Miranda • Desenvolvido
+                        por <br><a
+                            href="https://www.sitesalphacode.com.br"
+                            target="_blank"
+                            class="hover:text-[#b8860b] transition-colors font-bold"
+                            >ALPHA CODE</a
+                        >
                     </p>
                 </div>
             </div>
