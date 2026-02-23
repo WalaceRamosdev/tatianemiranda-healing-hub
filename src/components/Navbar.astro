@@ -157,10 +157,14 @@ const pathname = new URL(Astro.request.url).pathname;
     .hamburger {
         display: block;
         width: 25px;
-        height: 2px;
+        height: 2.5px;
         background: var(--color-primary);
         position: relative;
         transition: all 0.3s ease;
+    }
+
+    .header.scrolled .hamburger {
+        background: white;
     }
 
     .hamburger::before,
@@ -168,7 +172,7 @@ const pathname = new URL(Astro.request.url).pathname;
         content: "";
         position: absolute;
         width: 100%;
-        height: 2px;
+        height: 2.5px;
         background: inherit;
         left: 0;
         transition: all 0.3s ease;
