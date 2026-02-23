@@ -1,135 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* Fallback for Rollgates Luxury - The user should provide the font file if they want the exact one */
 @font-face {
-  font-family: 'Rollgates Luxury';
-  src: url('/fonts/RollgatesLuxury.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Rollgates Luxury';
+    src: url('/fonts/rollgates-luxury.woff2') format('woff2');
+    /* Placeholder path */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
-@layer base {
-  :root {
-    /* Identidade Visual - Tatiane Miranda */
-    --brand-blue: 219 37% 36%;
-    /* #3a527e */
-    --brand-light: 194 30% 91%;
-    /* #e1ecef */
+:root {
+    /* Colors - 60-30-10 Rule (Cinema) */
+    --color-primary: #3a527e;
+    /* 30% */
+    --color-secondary: #e1ecef;
+    /* 60% */
+    --color-accent: #1c2a44;
+    /* Darker blue */
+    --color-gold: #c5a059;
+    /* Cor de acento 10% */
 
-    --background: var(--brand-light);
-    --foreground: 219 40% 15%;
+    --bg-main: var(--color-secondary);
+    --bg-dark: var(--color-primary);
 
-    --card: 0 0% 100%;
-    --card-foreground: var(--foreground);
+    --text-dark: #2c3e50;
+    --text-primary: var(--color-primary);
+    --text-light: #f8f9fa;
 
-    --primary: var(--brand-blue);
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: var(--brand-light);
-    --secondary-foreground: var(--brand-blue);
-
-    --muted: 194 20% 85%;
-    --muted-foreground: 219 20% 45%;
-
-    --accent: 43 70% 50%;
-    /* Gold base */
-    --accent-foreground: 0 0% 100%;
-
-    --border: 219 30% 85%;
-    --input: 219 30% 85%;
-    --ring: var(--brand-blue);
-
-    --radius: 1.25rem;
-
-    --font-heading: 'Rollgates Luxury', 'Playfair Display', serif;
+    /* Fonts */
+    --font-display: 'Rollgates Luxury', 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
 
-    /* Gradients from Identity */
-    --gradient-gold: linear-gradient(135deg, #b8860b 0%, #e1b12c 50%, #f1c40f 100%);
-    --gradient-hero: linear-gradient(160deg, hsla(219, 37%, 36%, 0.95), hsla(219, 37%, 20%, 0.85));
-    --shadow-premium: 0 20px 40px -15px rgba(58, 82, 126, 0.15);
-  }
+    /* Gradients */
+    --gradient-linear: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(58, 82, 126, 0.8) 0%, rgba(225, 236, 239, 0.2) 100%);
+    --gradient-gold: linear-gradient(135deg, #c5a059 0%, #e6be75 100%);
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.1);
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
+    /* Spacing */
+    --section-padding: 100px 20px;
+    --container-width: 1200px;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-body);
-    -webkit-font-smoothing: antialiased;
+html {
     scroll-behavior: smooth;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-heading);
-  }
 }
 
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+    font-family: var(--font-display);
+    font-weight: normal;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.section-padding {
-  @apply py-20 md:py-32;
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: none;
+    text-align: center;
 }
 
-@keyframes fadeIn {
-  from {
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--text-light);
+}
+
+/* Seções */
+section {
+    padding: var(--section-padding);
+}
+
+/* Animations */
+[data-reveal] {
     opacity: 0;
-    transform: translateY(20px);
-  }
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
 
-  to {
+[data-reveal].revealed {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
 }

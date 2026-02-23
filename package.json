@@ -1,24 +1,16 @@
 {
-  "name": "tatiane-miranda-astro",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/sitemap": "^3.7.0",
-    "@astrojs/tailwind": "^6.0.0",
-    "astro": "^5.0.0",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.462.0",
-    "tailwind-merge": "^2.6.0",
-    "tailwindcss": "^3.4.0",
-    "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.9.3"
-  }
+    "name": "tatiane-miranda-site",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "astro": "^5.17.3"
+    },
+    "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c"
 }

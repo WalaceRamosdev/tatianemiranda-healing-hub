@@ -1,0 +1,179 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const feedbacks = [
+    {
+        name: "Ana P.",
+        text: "O processo com a Tatiane mudou minha forma de encarar os desafios do dia a dia. Sinto-me muito mais segura e confiante nas minhas decisões.",
+        type: "Adulto",
+    },
+    {
+        name: "Carlos M.",
+        text: "Excelente profissional. O ambiente é muito acolhedor e ela passa uma tranquilidade imensa durante as sessões.",
+        type: "Presencial",
+    },
+    {
+        name: "M. Eduarda",
+        text: "Gosto muito das sessões online, é prático e sinto que o acolhimento é o mesmo. Recomendo muito!",
+        type: "Online",
+    },
+    {
+        name: "Rodrigo F.",
+        text: "A abordagem da TCC me ajudou a entender padrões que eu nem percebia. Hoje tenho ferramentas reais para lidar com minha ansiedade.",
+        type: "TCC",
+    },
+];
+---
+
+<Layout title="Feedback">
+    <section class="feedback-hero">
+        <div class="container" data-reveal>
+            <h1 class="font-display">Feedback dos Clientes</h1>
+            <p class="subtitle">
+                O que as pessoas dizem sobre a jornada de transformação.
+            </p>
+        </div>
+    </section>
+
+    <section class="feedbacks">
+        <div class="container feedback-grid">
+            {
+                feedbacks.map((f, index) => (
+                    <div
+                        class="testimonial-card"
+                        data-reveal
+                        style={`transition-delay: ${index * 0.1}s`}
+                    >
+                        <div class="quote-icon">
+                            <svg
+                                width="30"
+                                height="30"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                opacity="0.2"
+                            >
+                                <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017V21H14.017ZM5.017 21L5.017 18C5.017 16.8954 5.91243 16 7.017 16H10.017C10.5693 16 11.017 15.5523 11.017 15V9C11.017 8.44772 10.5693 8 10.017 8H6.017C5.46472 8 5.017 8.44772 5.017 9V12C5.017 12.5523 4.56929 13 4.017 13H2.017V21H5.017Z" />
+                            </svg>
+                        </div>
+                        <p class="testimony">"{f.text}"</p>
+                        <div class="author">
+                            <div class="avatar">{f.name.charAt(0)}</div>
+                            <div class="author-info">
+                                <span class="name">{f.name}</span>
+                                <span class="tag">{f.type}</span>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+
+    <section class="your-turn">
+        <div class="container text-center" data-reveal>
+            <h2>Inicie sua própria jornada</h2>
+            <p>Dê o primeiro passo para o seu bem-estar hoje mesmo.</p>
+            <a href="/contato" class="btn btn-primary"
+                >Agendar minha primeira sessão</a
+            >
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .feedback-hero {
+        padding-top: 150px;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        color: #666;
+        margin-top: 10px;
+    }
+
+    .feedback-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin: 60px auto;
+    }
+
+    .testimonial-card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: var(--shadow-soft);
+        position: relative;
+        border: 1px solid rgba(58, 82, 126, 0.05);
+    }
+
+    .quote-icon {
+        margin-bottom: 20px;
+        color: var(--color-primary);
+    }
+
+    .testimony {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: #444;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .avatar {
+        width: 45px;
+        height: 45px;
+        background: var(--color-secondary);
+        color: var(--color-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+
+    .author-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name {
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    .tag {
+        font-size: 0.8rem;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .your-turn {
+        padding-bottom: 100px;
+        text-align: center;
+    }
+
+    .your-turn h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .your-turn p {
+        margin-bottom: 30px;
+        color: #666;
+    }
+
+    @media (max-width: 768px) {
+        .feedback-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

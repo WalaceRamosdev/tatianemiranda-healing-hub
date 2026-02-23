@@ -1,45 +1,65 @@
 ---
 import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
-	title: string;
-	description?: string;
+    title: string;
+    description?: string;
 }
 
 const {
-	title,
-	description = "Psicóloga Tatiane Miranda. Atendimento online e presencial com acolhimento, sigilo e escuta genuína.",
+    title,
+    description = "Tatiane Miranda - Psicóloga Clínica. Terapia Cognitivo-Comportamental para adolescentes e adultos.",
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta name="description" content={description} />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title} | Tatiane Miranda - Psicóloga</title>
+        <meta name="description" content={description} />
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={Astro.url} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:image" content="/tatiane-social.png" />
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
 
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={Astro.url} />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content="/tatiane-social.png" />
+        <ClientRouter />
+    </head>
+    <body>
+        <Navbar />
+        <main>
+            <slot />
+        </main>
+        <WhatsAppButton />
+        <Footer />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	</head>
-	<body class="selection:bg-primary selection:text-primary-foreground">
-		<slot />
-	</body>
+        <script>
+            // Intersection Observer for scroll reveals
+            const observerOptions = {
+                threshold: 0.1,
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("revealed");
+                    }
+                });
+            }, observerOptions);
+
+            document.addEventListener("astro:page-load", () => {
+                const revealElements =
+                    document.querySelectorAll("[data-reveal]");
+                revealElements.forEach((el) => observer.observe(el));
+            });
+        </script>
+    </body>
 </html>
