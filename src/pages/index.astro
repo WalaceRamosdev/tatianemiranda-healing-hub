@@ -41,6 +41,7 @@ const feedbacks = [
 
     <!-- SEÇÃO SOBRE -->
     <section id="sobre" class="about-section">
+        <div class="bg-circle circle-1"></div>
         <div class="container about-grid">
             <div class="about-image" data-reveal>
                 <div class="image-box gold-border">
@@ -73,6 +74,7 @@ const feedbacks = [
 
     <!-- SEÇÃO ABORDAGEM -->
     <section id="abordagem" class="approach bg-soft">
+        <div class="bg-circle circle-2"></div>
         <div class="container">
             <div class="section-header" data-reveal>
                 <span class="section-tag">Minha Abordagem</span>
@@ -157,6 +159,7 @@ const feedbacks = [
 
     <!-- SEÇÃO ATENDIMENTO -->
     <section id="atendimento" class="modalidades">
+        <div class="bg-circle circle-3"></div>
         <div class="container">
             <div class="section-header" data-reveal>
                 <span class="section-tag">Atendimentos</span>
@@ -208,6 +211,7 @@ const feedbacks = [
 
     <!-- SEÇÃO FEEDBACK -->
     <section id="feedback" class="feedback-section bg-soft">
+        <div class="bg-circle circle-1"></div>
         <div class="container">
             <div class="section-header" data-reveal>
                 <span class="section-tag">Depoimentos</span>
@@ -230,6 +234,7 @@ const feedbacks = [
 
     <!-- SEÇÃO FAQ -->
     <section id="duvidas" class="faq-home">
+        <div class="bg-circle circle-2"></div>
         <div class="container">
             <div class="section-header" data-reveal>
                 <h2 class="section-title">Dúvidas Frequentes</h2>
@@ -295,9 +300,9 @@ const feedbacks = [
                     <textarea
                         placeholder="Como posso te ajudar?"
                         required
-                        maxlength="500"></textarea>
+                        maxlength="2500"></textarea>
                     <div class="counter">
-                        <span id="char-count">0</span>/500
+                        <span id="char-count">0</span>/2500
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary gold-glow"
@@ -318,11 +323,69 @@ const feedbacks = [
         display: inline-block;
         color: var(--color-gold);
         text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 700;
+        letter-spacing: 4px;
+        font-weight: 900;
         font-size: 0.8rem;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
+        padding: 5px 15px;
+        border: 1px solid var(--color-gold);
+        border-radius: 5px;
+        background: rgba(197, 160, 89, 0.05);
+    }
+
+    section {
         position: relative;
+        overflow: hidden;
+    }
+
+    /* Elementos Decorativos de Fundo Intensificados */
+    .bg-circle {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(100px);
+        z-index: -1;
+        opacity: 0.35; /* Aumentado de 0.15 para 0.35 */
+        pointer-events: none;
+    }
+
+    .circle-1 {
+        top: -10%;
+        right: -10%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, var(--color-gold) 0%, transparent 70%);
+        animation: drift 12s infinite alternate ease-in-out;
+    }
+
+    .circle-2 {
+        bottom: -15%;
+        left: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+        animation: drift 15s infinite alternate-reverse ease-in-out;
+    }
+
+    .circle-3 {
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, var(--color-gold) 0%, transparent 60%);
+        opacity: 0.2;
+        animation: pulseGold 5s infinite;
+    }
+
+    @keyframes drift {
+        from { transform: translate(0, 0) scale(1) rotate(0); }
+        to { transform: translate(80px, 40px) scale(1.2) rotate(10deg); }
+    }
+
+    @keyframes pulseGold {
+        0%, 100% { opacity: 0.1; transform: translateX(-50%) scale(1); }
+        50% { opacity: 0.3; transform: translateX(-50%) scale(1.2); }
+    }
     }
 
     .section-header {
