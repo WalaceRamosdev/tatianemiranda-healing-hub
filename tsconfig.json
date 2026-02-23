@@ -1,9 +1,5 @@
 {
     "extends": "astro/tsconfigs/strict",
-    "include": [
-        ".astro/types.d.ts",
-        "src/**/*"
-    ],
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
@@ -13,5 +9,9 @@
         },
         "jsx": "preserve",
         "jsxImportSource": "astro"
-    }
+    },
+    "include": [
+        "src/**/*",
+        ".astro/types.d.ts"
+    ]
 }

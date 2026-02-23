@@ -8,11 +8,13 @@ import { ClientRouter } from "astro:transitions";
 interface Props {
     title: string;
     description?: string;
+    bodyClass?: string;
 }
 
 const {
     title,
     description = "Tatiane Miranda - Psicóloga Clínica. Terapia Cognitivo-Comportamental para adolescentes e adultos.",
+    bodyClass = "",
 } = Astro.props;
 ---
 
@@ -33,7 +35,7 @@ const {
 
         <ClientRouter />
     </head>
-    <body>
+    <body class={bodyClass}>
         <Navbar />
         <main>
             <slot />

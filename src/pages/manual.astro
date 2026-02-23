@@ -57,7 +57,27 @@ const technicalDetails = [
 <Layout
     title="Manual do Usuário"
     description="Manual de instruções para o site Healing Hub - Tatiane Miranda"
+    bodyClass="manual-page"
 >
+    <style is:global>
+        /* Ajuste definitivo para o Navbar no manual */
+        .manual-page .header:not(.scrolled) .logo-text,
+        .manual-page .header:not(.scrolled) .logo-subline,
+        .manual-page .header:not(.scrolled) .nav-menu a {
+            color: #ffffff !important;
+        }
+
+        .manual-page .header:not(.scrolled) .hamburger,
+        .manual-page .header:not(.scrolled) .hamburger::before,
+        .manual-page .header:not(.scrolled) .hamburger::after {
+            background: #ffffff !important;
+        }
+
+        .manual-page .header:not(.scrolled) .indicator {
+            background-color: var(--color-gold) !important;
+        }
+    </style>
+
     <div class="manual-hero">
         <div class="container" data-reveal>
             <span class="section-tag">Guia de Boas-Vindas</span>
@@ -116,27 +136,54 @@ const technicalDetails = [
 
 <style>
     .manual-hero {
-        padding: 160px 0 80px;
+        padding: 180px 0 100px;
         background: linear-gradient(
             135deg,
             var(--color-primary) 0%,
-            var(--color-accent) 100%
+            #1a2a44 100%
         );
         color: white;
         text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Adicionando brilho dourado de fundo no manual */
+    .manual-hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -10%;
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(
+            circle,
+            rgba(197, 160, 89, 0.1) 0%,
+            transparent 60%
+        );
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .manual-hero .container {
+        position: relative;
+        z-index: 1;
     }
 
     .manual-hero h1 {
-        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-size: clamp(3rem, 8vw, 4.5rem);
         margin-bottom: 20px;
+        color: white;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     .manual-subtitle {
-        max-width: 700px;
+        max-width: 800px;
         margin: 0 auto;
-        opacity: 0.9;
-        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.25rem;
         line-height: 1.6;
+        font-weight: 300;
     }
 
     .manual-content {

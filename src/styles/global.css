@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 /* Fallback for Rollgates Luxury - The user should provide the font file if they want the exact one */
+/* 
 @font-face {
     font-family: 'Rollgates Luxury';
     src: url('/fonts/rollgates-luxury.woff2') format('woff2');
-    /* Placeholder path */
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
+*/
 
 :root {
     /* Colors - 60-30-10 Rule (Cinema) */
