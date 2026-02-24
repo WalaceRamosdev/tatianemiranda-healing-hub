@@ -26,7 +26,7 @@ const faqs = [
 ---
 
 <Layout title="Dúvidas Frequentes">
-    <section class="faq-hero">
+    <section class="faq-hero section-light">
         <div class="container" data-reveal>
             <h1 class="font-display">Dúvidas Frequentes</h1>
             <p class="subtitle">
@@ -35,7 +35,7 @@ const faqs = [
         </div>
     </section>
 
-    <section class="faq-content">
+    <section class="faq-content section-ice">
         <div class="container faq-container">
             {
                 faqs.map((faq, index) => (
@@ -57,7 +57,7 @@ const faqs = [
         </div>
     </section>
 
-    <section class="still-questions">
+    <section class="still-questions section-light">
         <div class="container text-center" data-reveal>
             <div class="box">
                 <h3>Ainda tem alguma dúvida?</h3>
@@ -79,7 +79,7 @@ const faqs = [
 
     .subtitle {
         font-size: 1.1rem;
-        color: #666;
+        color: var(--neutral-gray-600);
         margin-top: 10px;
     }
 
@@ -95,7 +95,7 @@ const faqs = [
         box-shadow: var(--shadow-soft);
         overflow: hidden;
         transition: var(--transition-smooth);
-        border: 1px solid rgba(58, 82, 126, 0.05);
+        border: 1px solid var(--secondary-light);
     }
 
     .faq-item[open] {
@@ -110,7 +110,7 @@ const faqs = [
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: var(--color-primary);
+        color: var(--neutral-gray-800);
         font-size: 1.1rem;
     }
 
@@ -129,7 +129,7 @@ const faqs = [
 
     .answer {
         padding: 0 30px 25px 30px;
-        color: #555;
+        color: var(--neutral-gray-600);
         line-height: 1.6;
     }
 
@@ -142,10 +142,10 @@ const faqs = [
     }
 
     .box {
-        background-color: var(--color-secondary);
+        background-color: var(--secondary-ice);
         padding: 60px;
         border-radius: 30px;
-        border: 1px solid rgba(58, 82, 126, 0.1);
+        border: 1px solid var(--secondary-light);
     }
 
     .box h3 {
@@ -155,6 +155,6 @@ const faqs = [
 
     .box p {
         margin-bottom: 30px;
-        color: #555;
+        color: var(--neutral-gray-600);
     }
 </style>

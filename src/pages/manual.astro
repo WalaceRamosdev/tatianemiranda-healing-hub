@@ -3,9 +3,9 @@ import Layout from "../layouts/Layout.astro";
 
 const sections = [
     {
-        title: "1. O Conceito: Healing Hub",
+        title: "1. O Conceito: Identidade Suave e Acolhedora",
         content:
-            "Seu site foi desenvolvido para ser mais do que apenas um cartão de visitas digital; ele é o seu 'Healing Hub' (Centro de Cura). O design utiliza um tom de azul marinho profundo para transmitir confiança e serenidade, contrastado com elementos em **Dourado Premium**, que simbolizam a excelência e o valor do seu trabalho.",
+            "Seu site foi redesenhado para transmitir acolhimento imediato. A paleta utiliza tons de Azul Sereno para trazer calma, contrastados com o Azul Gelado e tons neutros, criando um ambiente digital seguro e profissional, ideal para a prática clínica.",
         icon: "✨",
     },
     {
@@ -27,9 +27,9 @@ const sections = [
         icon: "🔗",
     },
     {
-        title: "5. Experiência e Movimento",
+        title: "5. Experiência e Movimento Subtil",
         content:
-            "Você notará formas douradas e azuis que se movem levemente ao fundo. Essas 'esferas de luz' foram criadas para dar vida ao site, evitando que ele pareça estático ou 'vazio', mantendo uma atmosfera acolhedora e moderna.",
+            "Você notará formas suaves que se movem levemente ao fundo. Essas 'esferas de luz' em tons pastéis foram mantidas para dar vida ao site com uma atmosfera ainda mais delicada e moderna.",
         icon: "🌊",
     },
     {
@@ -49,7 +49,10 @@ const technicalDetails = [
         label: "Design",
         value: "Responsivo (Funciona em celulares, tablets e PCs)",
     },
-    { label: "Identidade", value: "Azul Marinho, Branco e Dourado Premium" },
+    {
+        label: "Identidade",
+        value: "Azul Sereno, Azul Gelado e Neutros Acolhedores",
+    },
     { label: "SEO", value: "Configurado para ser encontrado pelo Google" },
 ];
 ---
@@ -64,17 +67,17 @@ const technicalDetails = [
         .manual-page .header:not(.scrolled) .logo-text,
         .manual-page .header:not(.scrolled) .logo-subline,
         .manual-page .header:not(.scrolled) .nav-menu a {
-            color: #ffffff !important;
+            color: var(--primary-soft) !important;
         }
 
         .manual-page .header:not(.scrolled) .hamburger,
         .manual-page .header:not(.scrolled) .hamburger::before,
         .manual-page .header:not(.scrolled) .hamburger::after {
-            background: #ffffff !important;
+            background: var(--primary-soft) !important;
         }
 
         .manual-page .header:not(.scrolled) .indicator {
-            background-color: var(--color-gold) !important;
+            background-color: var(--primary-soft) !important;
         }
     </style>
 
@@ -139,8 +142,8 @@ const technicalDetails = [
         padding: 180px 0 100px;
         background: linear-gradient(
             135deg,
-            var(--color-primary) 0%,
-            #1a2a44 100%
+            var(--primary-soft) 0%,
+            var(--primary-hover) 100%
         );
         color: white;
         text-align: center;
@@ -188,7 +191,7 @@ const technicalDetails = [
 
     .manual-content {
         padding: 80px 0;
-        background: var(--color-secondary);
+        background: var(--secondary-ice);
     }
 
     .manual-grid {
@@ -232,7 +235,7 @@ const technicalDetails = [
 
     .manual-card h2 {
         font-size: 1.3rem;
-        color: var(--color-primary);
+        color: var(--primary-soft);
     }
 
     .manual-card p {
@@ -251,7 +254,7 @@ const technicalDetails = [
     .tech-info h2 {
         text-align: center;
         margin-bottom: 40px;
-        color: var(--color-primary);
+        color: var(--primary-soft);
     }
 
     .tech-grid {
@@ -268,7 +271,7 @@ const technicalDetails = [
     }
 
     .tech-item strong {
-        color: var(--color-primary);
+        color: var(--primary-soft);
     }
 
     .manual-footer {
@@ -276,7 +279,7 @@ const technicalDetails = [
     }
 
     .footer-box {
-        background: var(--color-primary);
+        background: var(--primary-soft);
         color: white;
         padding: 60px;
         border-radius: 30px;

@@ -40,7 +40,7 @@ const feedbacks = [
     />
 
     <!-- SEÇÃO SOBRE -->
-    <section id="sobre" class="about-section">
+    <section id="sobre" class="about-section section-light">
         <div class="bg-circle circle-1"></div>
         <div class="container about-grid">
             <div class="about-image" data-reveal>
@@ -73,7 +73,7 @@ const feedbacks = [
     </section>
 
     <!-- SEÇÃO ABORDAGEM -->
-    <section id="abordagem" class="approach bg-soft">
+    <section id="abordagem" class="approach section-ice">
         <div class="bg-circle circle-2"></div>
         <div class="container">
             <div class="section-header" data-reveal>
@@ -158,7 +158,7 @@ const feedbacks = [
     </section>
 
     <!-- SEÇÃO ATENDIMENTO -->
-    <section id="atendimento" class="modalidades">
+    <section id="atendimento" class="modalidades section-light">
         <div class="bg-circle circle-3"></div>
         <div class="container">
             <div class="section-header" data-reveal>
@@ -210,7 +210,7 @@ const feedbacks = [
     </section>
 
     <!-- SEÇÃO FEEDBACK -->
-    <section id="feedback" class="feedback-section bg-soft">
+    <section id="feedback" class="feedback-section section-ice">
         <div class="bg-circle circle-1"></div>
         <div class="container">
             <div class="section-header" data-reveal>
@@ -233,7 +233,7 @@ const feedbacks = [
     </section>
 
     <!-- SEÇÃO FAQ -->
-    <section id="duvidas" class="faq-home">
+    <section id="duvidas" class="faq-home section-light">
         <div class="bg-circle circle-2"></div>
         <div class="container">
             <div class="section-header" data-reveal>
@@ -257,7 +257,7 @@ const feedbacks = [
     </section>
 
     <!-- SEÇÃO CONTATO INTEGRADA -->
-    <section id="contato" class="contact-home">
+    <section id="contato" class="contact-home section-ice">
         <div class="container contact-box-home">
             <div class="contact-header-home" data-reveal>
                 <h2 class="font-display">Vamos Conversar?</h2>
@@ -316,7 +316,7 @@ const feedbacks = [
 
 <style>
     .bg-soft {
-        background-color: rgba(225, 236, 239, 0.5);
+        background-color: var(--secondary-ice);
     }
 
     .section-tag {
@@ -415,14 +415,14 @@ const feedbacks = [
     .image-box {
         width: 100%;
         aspect-ratio: 1;
-        background: #d1dde2;
+        background: var(--secondary-light);
         border-radius: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: var(--font-display);
         font-size: 2rem;
-        color: var(--color-primary);
+        color: var(--primary-soft);
         box-shadow: var(--shadow-medium);
     }
     .gold-border {
@@ -438,7 +438,7 @@ const feedbacks = [
     .quote {
         font-family: var(--font-display);
         font-size: 1.6rem;
-        color: var(--color-primary);
+        color: var(--primary-soft);
         font-style: italic;
         margin-bottom: 30px;
         border-left: 3px solid var(--color-gold);
@@ -461,8 +461,8 @@ const feedbacks = [
         background: white;
         padding: 40px;
         border-radius: 24px;
-        shadow: var(--shadow-soft);
-        border: 1px solid rgba(58, 82, 126, 0.05);
+        box-shadow: var(--shadow-soft);
+        border: 1px solid var(--secondary-light);
         transition: 0.3s;
     }
     .card:hover {
@@ -508,6 +508,7 @@ const feedbacks = [
         padding: 30px;
         border-radius: 20px;
         box-shadow: var(--shadow-soft);
+        border: 1px solid var(--secondary-light);
         font-style: italic;
     }
     .f-author {
@@ -535,14 +536,14 @@ const feedbacks = [
         display: flex;
         justify-content: space-between;
         font-weight: 700;
-        color: var(--color-primary);
+        color: var(--neutral-gray-800);
     }
     .gold-plus {
         color: var(--color-gold);
     }
     .faq-ans {
         padding: 0 20px 20px;
-        color: #666;
+        color: var(--neutral-gray-600);
     }
 
     /* FORMULÁRIO HOME */
@@ -550,18 +551,19 @@ const feedbacks = [
         padding: 120px 0;
     }
     .contact-box-home {
-        background: var(--color-primary);
-        color: white;
+        background: white;
+        color: var(--neutral-gray-800);
         padding: 80px;
         border-radius: 40px;
-        box-shadow: 0 30px 60px rgba(58, 82, 126, 0.2);
+        box-shadow: var(--shadow-medium);
+        border: 1px solid var(--secondary-light);
     }
     .contact-header-home {
         text-align: center;
         margin-bottom: 50px;
     }
     .contact-header-home h2 {
-        color: white;
+        color: var(--neutral-gray-800);
         font-size: 3rem;
     }
     .h-form {
@@ -589,25 +591,26 @@ const feedbacks = [
         width: 100%;
         padding: 15px;
         border-radius: 12px;
-        border: none;
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
+        border: 1px solid var(--secondary-light);
+        background: var(--neutral-light);
+        color: var(--neutral-black);
         font-family: inherit;
         outline: none;
     }
     input:focus,
     select:focus,
     textarea:focus {
-        background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.3);
+        background: white;
+        border-color: var(--primary-soft);
+        box-shadow: 0 0 0 2px rgba(106, 140, 175, 0.1);
     }
     select option {
-        background-color: var(--color-primary);
-        color: white;
+        background-color: white;
+        color: var(--neutral-black);
     }
     input::placeholder,
     textarea::placeholder {
-        color: rgba(255, 255, 255, 0.4);
+        color: var(--neutral-gray-600);
     }
     textarea {
         height: 120px;
@@ -623,12 +626,17 @@ const feedbacks = [
         box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
     }
     .btn-primary {
-        background-color: var(--color-gold);
+        background-color: var(--primary-soft);
         color: white;
         width: 100%;
         padding: 18px;
         border-radius: 12px;
         font-size: 1.1rem;
+        transition: var(--transition-smooth);
+    }
+    .btn-primary:hover {
+        background-color: var(--primary-hover);
+        transform: translateY(-2px);
     }
 
     @media (max-width: 992px) {

@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Atendimento">
-    <section class="atendimento-hero">
+    <section class="atendimento-hero section-light">
         <div class="container" data-reveal>
             <h1 class="font-display">Atendimento</h1>
             <p class="subtitle">
@@ -12,7 +12,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
     </section>
 
-    <section class="modalidades">
+    <section class="modalidades section-ice">
         <div class="container modalidades-grid">
             <div class="modalidade-card" data-reveal>
                 <div class="icon">
@@ -79,7 +79,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
     </section>
 
-    <section class="requisitos">
+    <section class="requisitos section-light">
         <div class="container" data-reveal>
             <div class="requisitos-box">
                 <h3>Público Alvo</h3>
@@ -96,7 +96,11 @@ import Layout from "../layouts/Layout.astro";
     .atendimento-hero {
         padding-top: 150px;
         text-align: center;
-        background: linear-gradient(180deg, #f4f9fb 0%, var(--bg-main) 100%);
+        background: linear-gradient(
+            180deg,
+            var(--secondary-ice) 0%,
+            var(--neutral-white) 100%
+        );
     }
 
     .atendimento-hero h1 {
@@ -106,7 +110,7 @@ import Layout from "../layouts/Layout.astro";
 
     .subtitle {
         font-size: 1.2rem;
-        color: #666;
+        color: var(--neutral-gray-600);
         max-width: 600px;
         margin: 0 auto;
     }
@@ -122,6 +126,7 @@ import Layout from "../layouts/Layout.astro";
         padding: 60px 40px;
         border-radius: 30px;
         box-shadow: var(--shadow-soft);
+        border: 1px solid var(--secondary-light);
         text-align: center;
         transition: var(--transition-smooth);
         display: flex;
@@ -135,12 +140,12 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .modalidade-card.darker {
-        background: #f8fbfc;
-        border: 1px solid rgba(58, 82, 126, 0.1);
+        background: white;
+        border: 1px solid var(--primary-soft);
     }
 
     .icon {
-        color: var(--color-primary);
+        color: var(--primary-soft);
         margin-bottom: 30px;
     }
 
@@ -150,7 +155,7 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .modalidade-card p {
-        color: #555;
+        color: var(--neutral-gray-600);
         margin-bottom: 30px;
         font-size: 1.05rem;
     }
@@ -165,7 +170,7 @@ import Layout from "../layouts/Layout.astro";
     .benefits li {
         margin-bottom: 12px;
         font-size: 0.95rem;
-        color: #444;
+        color: var(--neutral-gray-600);
         display: flex;
         align-items: center;
         gap: 10px;
@@ -175,7 +180,7 @@ import Layout from "../layouts/Layout.astro";
         content: "";
         width: 6px;
         height: 6px;
-        background: var(--color-primary);
+        background: var(--primary-soft);
         border-radius: 50%;
     }
 
@@ -184,7 +189,7 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .requisitos-box {
-        background: var(--color-primary);
+        background: var(--primary-soft);
         color: white;
         padding: 40px;
         border-radius: 20px;

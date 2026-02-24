@@ -3,14 +3,14 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Contato">
-    <section class="contact-hero">
+    <section class="contact-hero section-light">
         <div class="container" data-reveal>
             <h1 class="font-display">Contato</h1>
             <p class="subtitle">Agende sua consulta ou tire suas dúvidas.</p>
         </div>
     </section>
 
-    <section class="contact-section">
+    <section class="contact-section section-ice">
         <div class="container contact-grid">
             <div class="contact-info" data-reveal>
                 <div class="info-item">
@@ -145,7 +145,7 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .subtitle {
-        color: #666;
+        color: var(--neutral-gray-600);
     }
 
     .contact-grid {
@@ -164,8 +164,8 @@ import Layout from "../layouts/Layout.astro";
     .info-item .icon {
         width: 50px;
         height: 50px;
-        background: var(--color-secondary);
-        color: var(--color-primary);
+        background: var(--secondary-light);
+        color: var(--primary-soft);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -179,7 +179,7 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .info-item p {
-        color: #666;
+        color: var(--neutral-gray-600);
         line-height: 1.4;
     }
 
@@ -188,6 +188,7 @@ import Layout from "../layouts/Layout.astro";
         padding: 50px;
         border-radius: 30px;
         box-shadow: var(--shadow-medium);
+        border: 1px solid var(--secondary-light);
     }
 
     .form-group {
@@ -199,7 +200,7 @@ import Layout from "../layouts/Layout.astro";
         display: block;
         font-weight: 600;
         margin-bottom: 8px;
-        color: var(--color-primary);
+        color: var(--neutral-gray-800);
         font-size: 0.95rem;
     }
 
@@ -207,7 +208,8 @@ import Layout from "../layouts/Layout.astro";
     textarea {
         width: 100%;
         padding: 15px;
-        border: 1px solid #ddd;
+        border: 1px solid var(--secondary-light);
+        background: var(--neutral-light);
         border-radius: 10px;
         font-family: var(--font-body);
         font-size: 1rem;
@@ -217,8 +219,9 @@ import Layout from "../layouts/Layout.astro";
     input:focus,
     textarea:focus {
         outline: none;
-        border-color: var(--color-primary);
-        box-shadow: 0 0 0 4px rgba(58, 82, 126, 0.1);
+        background: white;
+        border-color: var(--primary-soft);
+        box-shadow: 0 0 0 4px rgba(106, 140, 175, 0.1);
     }
 
     textarea {

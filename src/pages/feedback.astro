@@ -26,7 +26,7 @@ const feedbacks = [
 ---
 
 <Layout title="Feedback">
-    <section class="feedback-hero">
+    <section class="feedback-hero section-light">
         <div class="container" data-reveal>
             <h1 class="font-display">Feedback dos Clientes</h1>
             <p class="subtitle">
@@ -35,7 +35,7 @@ const feedbacks = [
         </div>
     </section>
 
-    <section class="feedbacks">
+    <section class="feedbacks section-ice">
         <div class="container feedback-grid">
             {
                 feedbacks.map((f, index) => (
@@ -69,7 +69,7 @@ const feedbacks = [
         </div>
     </section>
 
-    <section class="your-turn">
+    <section class="your-turn section-light">
         <div class="container text-center" data-reveal>
             <h2>Inicie sua própria jornada</h2>
             <p>Dê o primeiro passo para o seu bem-estar hoje mesmo.</p>
@@ -88,7 +88,7 @@ const feedbacks = [
 
     .subtitle {
         font-size: 1.1rem;
-        color: #666;
+        color: var(--neutral-gray-600);
         margin-top: 10px;
     }
 
@@ -105,18 +105,18 @@ const feedbacks = [
         border-radius: 20px;
         box-shadow: var(--shadow-soft);
         position: relative;
-        border: 1px solid rgba(58, 82, 126, 0.05);
+        border: 1px solid var(--secondary-light);
     }
 
     .quote-icon {
         margin-bottom: 20px;
-        color: var(--color-primary);
+        color: var(--primary-soft);
     }
 
     .testimony {
         font-size: 1.1rem;
         font-style: italic;
-        color: #444;
+        color: var(--neutral-gray-600);
         margin-bottom: 30px;
         line-height: 1.6;
     }
@@ -130,8 +130,8 @@ const feedbacks = [
     .avatar {
         width: 45px;
         height: 45px;
-        background: var(--color-secondary);
-        color: var(--color-primary);
+        background: var(--secondary-light);
+        color: var(--primary-soft);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -146,7 +146,7 @@ const feedbacks = [
 
     .name {
         font-weight: 700;
-        color: var(--color-primary);
+        color: var(--primary-soft);
     }
 
     .tag {
@@ -168,7 +168,7 @@ const feedbacks = [
 
     .your-turn p {
         margin-bottom: 30px;
-        color: #666;
+        color: var(--neutral-gray-600);
     }
 
     @media (max-width: 768px) {

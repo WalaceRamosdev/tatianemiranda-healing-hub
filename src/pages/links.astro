@@ -13,8 +13,10 @@
             @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
             :root {
-                --color-primary: #3a527e;
-                --color-secondary: #e1ecef;
+                --color-primary: #6a8caf;
+                --color-primary-hover: #4f6f8f;
+                --color-ice: #f0f7fa;
+                --color-ice-darker: #e5f0f5;
                 --color-gold: #c5a059;
                 --font-display: "Playfair Display", serif;
                 --font-body: "Lato", sans-serif;
@@ -30,7 +32,7 @@
                 background: linear-gradient(
                     180deg,
                     var(--color-primary) 0%,
-                    #a8c0d1 100%
+                    var(--color-ice-darker) 100%
                 );
                 min-height: 100vh;
                 font-family: var(--font-body);
@@ -109,8 +111,8 @@
             }
 
             .link-item {
-                background: rgba(255, 255, 255, 0.9);
-                border: 1px solid rgba(255, 255, 255, 0.2);
+                background: white;
+                border: 1px solid var(--color-ice-darker);
                 padding: 16px 25px;
                 border-radius: 12px;
                 text-decoration: none;
@@ -125,8 +127,8 @@
             }
 
             .link-item:hover {
-                background: white;
-                color: var(--color-primary);
+                background: var(--color-ice);
+                color: var(--color-primary-hover);
                 transform: translateY(-3px);
                 box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             }
@@ -228,7 +230,8 @@
 
             <div class="footer-links">
                 <p>
-                    &copy; Tatiane Miranda | Desenvolvido por <a href="https://www.sitesalphacode.com.br/solucoes/psicologos"
+                    &copy; Tatiane Miranda | Desenvolvido por <a
+                        href="https://www.sitesalphacode.com.br/solucoes/psicologos"
                         >Alpha Code</a
                     >
                 </p>

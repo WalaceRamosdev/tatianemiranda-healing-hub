@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Sobre Mim">
-    <section class="about-hero">
+    <section class="about-hero section-light">
         <div class="container about-grid">
             <div class="about-image" data-reveal>
                 <div class="image-box">
@@ -57,7 +57,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
     </section>
 
-    <section class="atendimento-info">
+    <section class="atendimento-info section-ice">
         <div class="container info-grid">
             <div class="info-card" data-reveal>
                 <h3>Atendimento Presencial</h3>
@@ -92,14 +92,14 @@ import Layout from "../layouts/Layout.astro";
     .image-box {
         width: 100%;
         aspect-ratio: 1/1.2;
-        background: #d1dde2;
+        background: var(--secondary-light);
         border-radius: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: var(--font-display);
         font-size: 2rem;
-        color: var(--color-primary);
+        color: var(--primary-soft);
         box-shadow: var(--shadow-medium);
     }
 
@@ -110,7 +110,7 @@ import Layout from "../layouts/Layout.astro";
 
     .subtitle {
         font-size: 1.1rem;
-        color: var(--color-primary);
+        color: var(--primary-soft);
         letter-spacing: 1px;
         text-transform: uppercase;
         margin-bottom: 30px;
@@ -121,10 +121,10 @@ import Layout from "../layouts/Layout.astro";
         font-family: var(--font-display);
         font-size: 1.5rem;
         font-style: italic;
-        color: var(--color-accent);
+        color: var(--primary-hover);
         margin-bottom: 40px;
         padding-left: 20px;
-        border-left: 4px solid var(--color-primary);
+        border-left: 4px solid var(--primary-soft);
         line-height: 1.4;
     }
 
@@ -135,7 +135,7 @@ import Layout from "../layouts/Layout.astro";
 
     .bio-text p {
         margin-bottom: 20px;
-        color: #444;
+        color: var(--neutral-gray-600);
     }
 
     .bio-text ul {
@@ -146,14 +146,14 @@ import Layout from "../layouts/Layout.astro";
         position: relative;
         padding-left: 30px;
         margin-bottom: 15px;
-        color: #444;
+        color: var(--neutral-gray-600);
     }
 
     .bio-text li::before {
         content: "•";
         position: absolute;
         left: 0;
-        color: var(--color-primary);
+        color: var(--primary-soft);
         font-size: 1.5rem;
         line-height: 1;
     }
@@ -169,6 +169,7 @@ import Layout from "../layouts/Layout.astro";
         padding: 40px;
         border-radius: 20px;
         box-shadow: var(--shadow-soft);
+        border: 1px solid var(--secondary-light);
         text-align: center;
     }
 

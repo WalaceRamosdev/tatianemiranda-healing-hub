@@ -37,7 +37,11 @@ const { title, subtitle, ctaText, ctaLink } = Astro.props;
         min-height: 100vh;
         display: flex;
         align-items: center;
-        background: linear-gradient(135deg, #e1ecef 0%, #f4f9fb 100%);
+        background: linear-gradient(
+            135deg,
+            var(--secondary-ice) 0%,
+            var(--neutral-white) 100%
+        );
         position: relative;
         overflow: hidden;
         padding-top: 100px;
@@ -50,7 +54,7 @@ const { title, subtitle, ctaText, ctaLink } = Astro.props;
         right: -10%;
         width: 600px;
         height: 600px;
-        background: rgba(58, 82, 126, 0.03);
+        background: rgba(106, 140, 175, 0.05);
         border-radius: 50%;
         z-index: 0;
     }
@@ -72,7 +76,7 @@ const { title, subtitle, ctaText, ctaLink } = Astro.props;
 
     .hero-subtitle {
         font-size: 1.2rem;
-        color: #555;
+        color: var(--neutral-gray-600);
         margin-bottom: 40px;
         max-width: 600px;
     }
@@ -97,14 +101,14 @@ const { title, subtitle, ctaText, ctaLink } = Astro.props;
     .image-placeholder {
         width: 100%;
         height: 100%;
-        background-color: #d1dde2;
+        background-color: var(--secondary-light);
         border-radius: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: var(--font-display);
         font-size: 2rem;
-        color: var(--color-primary);
+        color: var(--primary-soft);
         box-shadow: var(--shadow-medium);
         z-index: 2;
         position: relative;
