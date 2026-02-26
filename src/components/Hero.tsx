@@ -31,7 +31,7 @@ export const Hero = () => {
             rotate: [0, -120, 120, 0]
           }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-[10%] -right-[10%] w-[120%] h-[120%] bg-gradient-to-tr from-accent/20 via-primary/10 to-secondary/30 rounded-full blur-[180px] opacity-50"
+          className="absolute -bottom-[10%] -right-[10%] w-[120%] h-[120%] bg-gradient-to-tr from-gold/15 via-primary/5 to-secondary/30 rounded-full blur-[180px] opacity-50"
         />
 
         {/* High Density Particle Field (Taking 100% of the area) */}
@@ -54,7 +54,7 @@ export const Hero = () => {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute rounded-full bg-primary/20 blur-[1px]"
+            className={`absolute rounded-full blur-[1px] ${i % 5 === 0 ? 'bg-gold/40' : 'bg-primary/20'}`}
             style={{
               width: (Math.random() * 10 + 4) + "px",
               height: (Math.random() * 10 + 4) + "px"
@@ -113,14 +113,14 @@ export const Hero = () => {
             <motion.div
               animate={{ rotate: [3, 8, 3], scale: [1, 1.02, 1] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -inset-6 border-2 border-primary/20 rounded-[64px] -z-10 rotate-[3deg]"
+              className="absolute -inset-6 border-2 border-gold/30 rounded-[64px] -z-10 rotate-[3deg]"
             />
 
             {/* Pulsing Badge */}
             <motion.div
               animate={{ y: [0, -15, 0], scale: [1, 1.1, 1] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-8 -right-8 bg-white p-5 rounded-[24px] shadow-2xl text-primary z-20 border border-primary/5"
+              className="absolute -top-8 -right-8 bg-white p-5 rounded-[24px] shadow-2xl text-gold z-20 border border-gold/10"
             >
               <Sparkles size={32} className="animate-pulse" />
             </motion.div>
@@ -165,7 +165,7 @@ export const Hero = () => {
             >
               <a
                 href="#contact"
-                className="group relative bg-primary text-white px-12 py-5 rounded-full text-xl font-medium transition-all shadow-[0_20px_40px_-10px_rgba(58,82,126,0.4)] hover:shadow-primary/40 hover:-translate-y-1 active:translate-y-0"
+                className="group relative bg-gold text-white px-12 py-5 rounded-full text-xl font-medium transition-all shadow-[0_20px_40px_-10px_rgba(197,160,89,0.4)] hover:shadow-gold/40 hover:-translate-y-1 active:translate-y-0"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Agendar Consulta

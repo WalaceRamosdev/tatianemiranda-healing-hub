@@ -7,6 +7,7 @@ export default {
                 primary: "#3a527e",
                 secondary: "#e1ecef",
                 accent: "#f0e6d5",
+                gold: "#c5a059", // Elegant Gold
             },
             fontFamily: {
                 serif: ["Cormorant Garamond", "serif"],

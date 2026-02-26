@@ -75,7 +75,7 @@ export const Navbar = () => {
             ))}
             <a
               href="#contact"
-              className="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-all shadow-md hover:shadow-lg"
+              className="bg-gold text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gold/90 transition-all shadow-md hover:shadow-lg"
             >
               Agendar
             </a>
