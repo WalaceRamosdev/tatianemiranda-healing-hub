@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, Send, Calendar } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
+import { SmartForm } from './SmartForm';
 
 const faqs = [
   {
@@ -28,10 +29,10 @@ export const Contact = () => {
     <section id="faq" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20">
-          
+
           {/* FAQ Section */}
           <div className="space-y-12">
-            <h2 className="text-4xl md:text-5xl text-primary">Dúvidas Frequentes</h2>
+            <h2 className="text-4xl md:text-5xl text-primary font-serif">Dúvidas Frequentes</h2>
             <div className="space-y-4">
               {faqs.map((faq, i) => (
                 <div key={i} className="border-b border-primary/10">
@@ -40,9 +41,9 @@ export const Contact = () => {
                     className="w-full py-6 flex justify-between items-center text-left group"
                   >
                     <span className="text-xl text-primary font-serif group-hover:pl-2 transition-all duration-300">{faq.q}</span>
-                    <ChevronDown 
-                      className={`text-primary/40 transition-transform duration-500 ${activeFaq === i ? 'rotate-180' : ''}`} 
-                      size={20} 
+                    <ChevronDown
+                      className={`text-primary/40 transition-transform duration-500 ${activeFaq === i ? 'rotate-180' : ''}`}
+                      size={20}
                     />
                   </button>
                   <AnimatePresence>
@@ -67,35 +68,8 @@ export const Contact = () => {
 
           {/* Contact Section */}
           <div id="contact" className="space-y-12">
-            <h2 className="text-4xl md:text-5xl text-primary">Inicie sua Jornada</h2>
-            
-            <div className="glass p-10 rounded-[30px] space-y-8 relative overflow-hidden">
-              {/* Decorative Calendar Simulation */}
-              <div className="flex items-center gap-4 text-primary/80 mb-4">
-                <Calendar size={24} strokeWidth={1.5} />
-                <span className="font-light">Disponibilidade para novos pacientes</span>
-              </div>
-
-              <div className="grid grid-cols-7 gap-2 opacity-30 pointer-events-none">
-                {[...Array(28)].map((_, i) => (
-                  <div key={i} className={`aspect-square rounded-md ${i % 7 === 0 || i % 7 === 6 ? 'bg-primary/10' : 'bg-primary/20'}`} />
-                ))}
-              </div>
-
-              <div className="space-y-6">
-                <p className="text-primary/70 text-lg font-light">
-                  Sinta-se à vontade para enviar uma mensagem. Responderei o mais breve possível para agendarmos uma conversa.
-                </p>
-                
-                <button className="w-full py-5 bg-primary text-white rounded-2xl flex items-center justify-center gap-3 hover:bg-primary/90 transition-all duration-300 group shadow-lg">
-                  <span className="text-lg font-medium">Enviar Mensagem</span>
-                  <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                </button>
-              </div>
-
-              {/* Subtle Particles */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-accent/20 rounded-full blur-3xl -z-10" />
-            </div>
+            <h2 className="text-4xl md:text-5xl text-primary font-serif">Inicie sua Jornada</h2>
+            <SmartForm />
           </div>
         </div>
       </div>

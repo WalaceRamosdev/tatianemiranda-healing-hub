@@ -4,9 +4,9 @@ import { GraduationCap, Heart, Sparkles } from 'lucide-react';
 
 export const About = () => {
   const timeline = [
-    { icon: <GraduationCap size={20} />, title: 'Formação', desc: 'Graduada em Psicologia pela USP com especialização em TCC.' },
-    { icon: <Heart size={20} />, title: 'Propósito', desc: 'Acredito na terapia como um processo de libertação e encontro.' },
-    { icon: <Sparkles size={20} />, title: 'Experiência', desc: 'Mais de 10 anos acompanhando jornadas de transformação.' },
+    { icon: <GraduationCap size={20} />, title: 'Especialista em TCC', desc: 'Pós-graduada em Terapia Cognitivo-Comportamental e Avaliação Psicológica.' },
+    { icon: <Heart size={20} />, title: 'Acolhimento', desc: 'Espaço seguro para adolescentes e adultos ressignificarem suas dores.' },
+    { icon: <Sparkles size={20} />, title: 'Público', desc: 'Foco em ansiedade, autoestima, depressão e desenvolvimento pessoal.' },
   ];
 
   return (
@@ -20,9 +20,9 @@ export const About = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          
+
           {/* Organic Photo Container */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -31,18 +31,17 @@ export const About = () => {
           >
             <div className="relative w-full aspect-square max-w-md mx-auto">
               {/* Organic Shape Mask */}
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.02 }}
                 className="w-full h-full overflow-hidden rounded-[60%_40%_30%_70%/60%_30%_70%_40%] shadow-2xl bg-secondary group transition-all duration-700"
               >
-                <img 
-                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800" 
-                  alt="Tatiane em seu consultório"
+                <img
+                  src="/profile.svg"
+                  alt="Tatiane Miranda - Psicóloga"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
                 />
               </motion.div>
-              
+
               {/* Decorative Element */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/30 rounded-full blur-3xl -z-10" />
             </div>
@@ -51,15 +50,15 @@ export const About = () => {
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl text-primary"
+                className="text-4xl md:text-5xl text-primary font-serif"
               >
-                Tatiane Miranda
+                Quem Sou Eu
               </motion.h2>
-              <motion.div 
+              <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: '80px' }}
                 viewport={{ once: true }}
@@ -67,25 +66,35 @@ export const About = () => {
               />
             </div>
 
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-primary/80 text-lg leading-relaxed font-light"
-            >
-              Minha prática é pautada no acolhimento e na escuta ativa. Acredito que cada indivíduo possui uma história única que merece ser honrada e compreendida em profundidade.
-            </motion.p>
+            <div className="space-y-4 text-primary/80 text-lg leading-relaxed font-light">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                Sou <strong>Tatiane Miranda (CRP-10/11768)</strong>, psicóloga clínica apaixonada pela capacidade de transformação humana. Atuo com a Terapia Cognitivo-Comportamental (TCC) para ajudar adolescentes e adultos a ressignificarem seus pensamentos e emoções.
+              </motion.p>
 
-            {/* Visual Timeline */}
-            <div className="space-y-6">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                Meu compromisso é oferecer um espaço seguro e livre de julgamentos, focado no presente e baseado em evidências, para que você possa desenvolver maior autonomia e autoconfiança no seu processo de cura.
+              </motion.p>
+            </div>
+
+            {/* Visual Timeline / Features */}
+            <div className="space-y-6 pt-4">
               {timeline.map((item, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
                   className="flex items-start gap-4 group"
                 >
                   <div className="mt-1 p-2 bg-secondary rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
@@ -93,7 +102,7 @@ export const About = () => {
                   </div>
                   <div>
                     <h4 className="font-serif text-xl text-primary">{item.title}</h4>
-                    <p className="text-primary/60 text-sm">{item.desc}</p>
+                    <p className="text-primary/60 text-sm leading-snug">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}

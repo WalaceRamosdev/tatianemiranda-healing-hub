@@ -5,14 +5,13 @@ import { Hero } from "../components/Hero";
 import { About } from "../components/About";
 import { Services } from "../components/Services";
 import { Testimonials } from "../components/Testimonials";
+import { Location } from "../components/Location";
 import { Contact } from "../components/Contact";
 import { WhatsAppButton } from "../components/WhatsAppButton";
-import { CustomCursor } from "../components/CustomCursor";
 ---
 
 <Layout title="Tatiane Miranda - Psicóloga">
     <div class="relative min-h-screen">
-        <CustomCursor client:load />
         <Navbar client:load />
 
         <main>
@@ -23,6 +22,8 @@ import { CustomCursor } from "../components/CustomCursor";
             <Services client:visible />
 
             <Testimonials client:visible />
+
+            <Location client:visible />
 
             <Contact client:load />
         </main>
@@ -36,7 +37,7 @@ import { CustomCursor } from "../components/CustomCursor";
                         Tatiane Miranda
                     </h3>
                     <p class="text-sm font-light">
-                        Psicóloga Clínica • CRP 06/00000
+                        Psicóloga Clínica • CRP-10/11768
                     </p>
                 </div>
 

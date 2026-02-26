@@ -11,7 +11,7 @@ export const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY > 50) {
         setScrolled(true);
       } else {
@@ -23,7 +23,7 @@ export const Navbar = () => {
       } else {
         setVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -46,22 +46,44 @@ export const Navbar = () => {
         initial={{ y: 0 }}
         animate={{ y: visible ? 0 : -100 }}
         transition={{ duration: 0.3 }}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled ? 'bg-white/80 backdrop-blur-lg py-4 shadow-sm' : 'bg-transparent py-6'
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/80 backdrop-blur-lg py-4 shadow-sm' : 'bg-transparent py-6'
+          }`}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-primary font-serif text-2xl font-medium tracking-wider"
+            className="h-12 md:h-16"
           >
-            TM
+            <img
+              src="/logo.svg"
+              alt="Tatiane Miranda"
+              className="h-full w-auto object-contain"
+            />
           </motion.div>
 
-          <button 
+          {/* Conventional Desktop Menu */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {menuItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-primary/70 hover:text-primary font-medium transition-colors text-sm uppercase tracking-widest"
+              >
+                {item.name}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-all shadow-md hover:shadow-lg"
+            >
+              Agendar
+            </a>
+          </nav>
+
+          <button
             onClick={() => setIsOpen(true)}
-            className="p-2 text-primary hover:opacity-70 transition-opacity"
+            className="md:hidden p-2 text-primary hover:opacity-70 transition-opacity"
             aria-label="Abrir menu"
           >
             <Menu size={24} strokeWidth={1} />
@@ -77,7 +99,7 @@ export const Navbar = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[60] bg-secondary/95 backdrop-blur-xl flex flex-col items-center justify-center"
           >
-            <button 
+            <button
               onClick={() => setIsOpen(false)}
               className="absolute top-8 right-8 p-2 text-primary hover:rotate-90 transition-transform duration-300"
             >
