@@ -85,7 +85,7 @@ export const Location = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-serif text-xl text-primary font-medium">Contato</h4>
-                                    <p className="text-primary/70">(94) 8404-6655</p>
+                                    <p className="text-primary/70">(94) 98404-6655</p>
                                     <p className="text-primary/70">contato@tatianemiranda.com.br</p>
                                 </div>
                             </motion.div>
