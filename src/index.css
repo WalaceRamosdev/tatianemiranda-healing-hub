@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  --color-primary: #3a527e;
+  --color-secondary: #e1ecef;
+  --color-accent: #f0e6d5;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    cursor: none;
+  }
+
+  body {
+    @apply bg-secondary text-primary font-sans overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-linear-to-br from-white/40 to-white/10 backdrop-blur-lg border border-white/30 shadow-sm;
+  }
+
+  .text-watermark {
+    @apply text-[15vw] font-serif opacity-5 select-none pointer-events-none leading-none;
+  }
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3a527e;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease-out, width 0.3s ease, height 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor.active {
+  transform: translate(-50%, -50%) scale(2.5);
+  background: rgba(58, 82, 126, 0.1);
+  border-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
+  html {
+    cursor: auto;
+  }
+}

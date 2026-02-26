@@ -1,67 +1,24 @@
 ---
-import "../styles/global.css";
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
-import WhatsAppButton from "../components/WhatsAppButton.astro";
-import { ClientRouter } from "astro:transitions";
+import '../index.css';
 
 interface Props {
-    title: string;
-    description?: string;
-    bodyClass?: string;
+  title: string;
 }
 
-const {
-    title,
-    description = "Tatiane Miranda - Psicóloga Clínica. Terapia Cognitivo-Comportamental para adolescentes e adultos.",
-    bodyClass = "",
-} = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title} | Tatiane Miranda - Psicóloga</title>
-        <meta name="description" content={description} />
-
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-
-        <ClientRouter />
-    </head>
-    <body class={bodyClass}>
-        <Navbar />
-        <main>
-            <slot />
-        </main>
-        <WhatsAppButton />
-        <Footer />
-
-        <script>
-            // Intersection Observer for scroll reveals
-            const observerOptions = {
-                threshold: 0.1,
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("revealed");
-                    }
-                });
-            }, observerOptions);
-
-            document.addEventListener("astro:page-load", () => {
-                const revealElements =
-                    document.querySelectorAll("[data-reveal]");
-                revealElements.forEach((el) => observer.observe(el));
-            });
-        </script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content="Tatiane Miranda - Psicóloga Clínica. Atendimento especializado com foco no seu bem-estar." />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>

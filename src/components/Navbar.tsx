@@ -1,0 +1,113 @@
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Menu, X, Instagram, Linkedin, MessageCircle } from 'lucide-react';
+
+export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  const menuItems = [
+    { name: 'Início', href: '#home' },
+    { name: 'Sobre Mim', href: '#about' },
+    { name: 'Especialidades', href: '#services' },
+    { name: 'Depoimentos', href: '#testimonials' },
+    { name: 'FAQ', href: '#faq' },
+    { name: 'Contato', href: '#contact' },
+  ];
+
+  return (
+    <>
+      <motion.header
+        initial={{ y: 0 }}
+        animate={{ y: visible ? 0 : -100 }}
+        transition={{ duration: 0.3 }}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+          scrolled ? 'bg-white/80 backdrop-blur-lg py-4 shadow-sm' : 'bg-transparent py-6'
+        }`}
+      >
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-primary font-serif text-2xl font-medium tracking-wider"
+          >
+            TM
+          </motion.div>
+
+          <button 
+            onClick={() => setIsOpen(true)}
+            className="p-2 text-primary hover:opacity-70 transition-opacity"
+            aria-label="Abrir menu"
+          >
+            <Menu size={24} strokeWidth={1} />
+          </button>
+        </div>
+      </motion.header>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-secondary/95 backdrop-blur-xl flex flex-col items-center justify-center"
+          >
+            <button 
+              onClick={() => setIsOpen(false)}
+              className="absolute top-8 right-8 p-2 text-primary hover:rotate-90 transition-transform duration-300"
+            >
+              <X size={32} strokeWidth={1} />
+            </button>
+
+            <nav className="flex flex-col items-center space-y-8">
+              {menuItems.map((item, index) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={() => setIsOpen(false)}
+                  className="text-primary font-serif text-4xl md:text-6xl hover:italic transition-all duration-300"
+                >
+                  {item.name}
+                </motion.a>
+              ))}
+            </nav>
+
+            <div className="absolute bottom-12 flex space-x-6">
+              <Instagram size={20} className="text-primary/60 hover:text-primary cursor-pointer transition-colors" />
+              <Linkedin size={20} className="text-primary/60 hover:text-primary cursor-pointer transition-colors" />
+              <MessageCircle size={20} className="text-primary/60 hover:text-primary cursor-pointer transition-colors" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
