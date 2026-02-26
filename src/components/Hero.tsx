@@ -8,86 +8,79 @@ export const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-28 overflow-hidden bg-[#f8fafb]">
-      {/* --- TOTAL BACKGROUND ANIMATION SYSTEM --- */}
+      {/* --- OPTIMIZED BACKGROUND ANIMATION SYSTEM --- */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-
-        {/* Ultra-Large Animated Blobs (Filling the entire space) */}
+        {/* Simplified Large Animated Blobs */}
         <motion.div
           animate={{
-            x: [0, 50, -50, 0],
-            y: [0, -30, 30, 0],
-            scale: [1, 1.2, 0.9, 1],
-            rotate: [0, 90, 180, 0]
+            scale: [1, 1.1, 1],
+            rotate: [0, 45, 0]
           }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[10%] -left-[10%] w-[120%] h-[120%] bg-gradient-to-br from-primary/15 via-accent/30 to-secondary/20 rounded-full blur-[160px] opacity-70"
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-[20%] -left-[20%] w-[100%] h-[100%] bg-gradient-to-br from-primary/10 via-accent/20 to-secondary/15 rounded-full blur-[100px] opacity-60"
         />
 
         <motion.div
           animate={{
-            x: [0, -70, 70, 0],
-            y: [0, 40, -40, 0],
-            scale: [1.1, 1, 1.2, 1.1],
-            rotate: [0, -120, 120, 0]
+            scale: [1.1, 1, 1.1],
+            rotate: [0, -45, 0]
           }}
-          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-[10%] -right-[10%] w-[120%] h-[120%] bg-gradient-to-tr from-gold/15 via-primary/5 to-secondary/30 rounded-full blur-[180px] opacity-50"
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-[20%] -right-[20%] w-[100%] h-[100%] bg-gradient-to-tr from-gold/10 via-primary/5 to-secondary/20 rounded-full blur-[120px] opacity-40"
         />
 
-        {/* High Density Particle Field (Taking 100% of the area) */}
-        {[...Array(60)].map((_, i) => (
+        {/* Essential Particles Only (Reduced from 60 to 12 for better TBT) */}
+        {[...Array(12)].map((_, i) => (
           <motion.div
             key={`p-${i}`}
             initial={{
-              left: Math.random() * 100 + "%",
-              top: Math.random() * 100 + "%",
-              opacity: Math.random() * 0.5 + 0.2,
-              scale: Math.random() * 1.5 + 0.5
+              left: (10 + Math.random() * 80) + "%",
+              top: (10 + Math.random() * 80) + "%",
+              opacity: 0.2
             }}
             animate={{
-              y: ["0px", (Math.random() * 150 - 75) + "px"],
-              x: ["0px", (Math.random() * 150 - 75) + "px"],
-              opacity: [0.2, 0.6, 0.2],
+              y: ["0px", (i % 2 === 0 ? "50px" : "-50px")],
+              opacity: [0.2, 0.4, 0.2],
             }}
             transition={{
-              duration: 10 + Math.random() * 20,
+              duration: 15 + i * 2,
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className={`absolute rounded-full blur-[1px] ${i % 5 === 0 ? 'bg-gold/40' : 'bg-primary/20'}`}
+            className={`absolute rounded-full blur-[1px] ${i % 3 === 0 ? 'bg-gold/30' : 'bg-primary/10'}`}
             style={{
-              width: (Math.random() * 10 + 4) + "px",
-              height: (Math.random() * 10 + 4) + "px"
+              width: (i % 2 === 0 ? "8px" : "12px"),
+              height: (i % 2 === 0 ? "8px" : "12px")
             }}
           />
         ))}
 
-        {/* Interactive icons spreading across background */}
-        {[...Array(8)].map((_, i) => (
+        {/* Selected Decorative Icons (Reduced density) */}
+        {[...Array(4)].map((_, i) => (
           <motion.div
             key={`bg-icon-${i}`}
-            className="absolute text-primary/10"
+            className="absolute text-primary/5"
             initial={{
-              left: (Math.random() * 100) + "%",
-              top: (Math.random() * 100) + "%"
+              left: (20 + (i * 20)) + "%",
+              top: (20 + (i * 15)) + "%"
             }}
             animate={{
-              y: [-20, 20, -20],
-              rotate: 360
+              y: [-10, 10, -10],
+              rotate: 45
             }}
             transition={{
               duration: 20 + i * 5,
               repeat: Infinity,
-              ease: "linear"
+              ease: "easeInOut"
             }}
           >
-            {i % 2 === 0 ? <Leaf size={40 + i * 5} /> : <Sparkles size={30 + i * 10} />}
+            {i % 2 === 0 ? <Leaf size={40} /> : <Sparkles size={35} />}
           </motion.div>
         ))}
 
         {/* Grain Texture & Grid */}
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay" />
-        <div className="absolute inset-0 bg-[radial-gradient(#3a527e_0.5px,transparent_0.5px)] [background-size:60px_60px] opacity-[0.08]" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.02] mix-blend-overlay" />
+        <div className="absolute inset-0 bg-[radial-gradient(#3a527e_0.5px,transparent_0.5px)] [background-size:60px_60px] opacity-[0.05]" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
