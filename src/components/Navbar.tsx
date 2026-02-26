@@ -54,12 +54,13 @@ export const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="h-12 md:h-16"
-          >
+          ><a href="#home">
             <img
               src="/logo.svg"
               alt="Tatiane Miranda"
               className="h-full w-auto object-contain"
             />
+            </a>
           </motion.div>
 
           {/* Conventional Desktop Menu */}
