@@ -55,11 +55,11 @@ export const Navbar = () => {
             animate={{ opacity: 1 }}
             className="h-12 md:h-16"
           ><a href="#home">
-            <img
-              src="/logo.svg"
-              alt="Tatiane Miranda"
-              className="h-full w-auto object-contain"
-            />
+              <img
+                src="/logo.svg"
+                alt="Tatiane Miranda"
+                className="h-full w-auto object-contain"
+              />
             </a>
           </motion.div>
 
@@ -74,12 +74,17 @@ export const Navbar = () => {
                 {item.name}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="bg-gold text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gold/90 transition-all shadow-md hover:shadow-lg"
-            >
-              Agendar
-            </a>
+            <div className="flex items-center space-x-4 ml-4">
+              <a href="https://www.instagram.com/psi_tatianemiranda?utm_source=qr&igsh=MXc2OWs4NDd6d3RlOA%3D%3D" target="_blank" rel="noopener noreferrer" className="text-primary/60 hover:text-primary transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a
+                href="#contact"
+                className="bg-gold text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gold/90 transition-all shadow-md hover:shadow-lg"
+              >
+                Agendar
+              </a>
+            </div>
           </nav>
 
           <button
@@ -124,9 +129,11 @@ export const Navbar = () => {
             </nav>
 
             <div className="absolute bottom-12 flex space-x-6">
-              <Instagram size={20} className="text-primary/60 hover:text-primary cursor-pointer transition-colors" />
-              <Linkedin size={20} className="text-primary/60 hover:text-primary cursor-pointer transition-colors" />
-              <MessageCircle size={20} className="text-primary/60 hover:text-primary cursor-pointer transition-colors" />
+              <a href="https://www.instagram.com/psi_tatianemiranda?utm_source=qr&igsh=MXc2OWs4NDd6d3RlOA%3D%3D" target="_blank" rel="noopener noreferrer">
+                <Instagram size={24} className="text-primary/60 hover:text-primary cursor-pointer transition-colors" />
+              </a>
+              <Linkedin size={24} className="text-primary/60 hover:text-primary cursor-pointer transition-colors" />
+              <MessageCircle size={24} className="text-primary/60 hover:text-primary cursor-pointer transition-colors" />
             </div>
           </motion.div>
         )}

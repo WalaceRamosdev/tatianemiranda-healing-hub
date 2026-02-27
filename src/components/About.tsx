@@ -82,7 +82,7 @@ export const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
               >
-                Meu compromisso é oferecer um espaço seguro e livre de julgamentos, focado no presente e baseado em evidências, para que você possa desenvolver maior autonomia e autoconfiança no seu processo de cura.
+                Meu compromisso é oferecer um espaço seguro e livre de julgamentos, focado no presente e baseado em evidências, para que você possa desenvolver maior autonomia e autoconfiança no seu processo terapêutico.
               </motion.p>
             </div>
 

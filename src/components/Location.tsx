@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Phone, Clock, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Clock, ExternalLink, Instagram } from 'lucide-react';
 
 export const Location = () => {
     const address = "Av. Nagib Mutran, Quadra 17, Lote 02 - Cidade Nova, Marabá - PA, 68501-570";
@@ -87,6 +87,15 @@ export const Location = () => {
                                     <h4 className="font-serif text-xl text-primary font-medium">Contato</h4>
                                     <p className="text-primary/70">(94) 98404-6655</p>
                                     <p className="text-primary/70">contato@tatianemiranda.com.br</p>
+                                    <a
+                                        href="https://www.instagram.com/psi_tatianemiranda?utm_source=qr&igsh=MXc2OWs4NDd6d3RlOA%3D%3D"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-primary/70 hover:text-primary transition-colors flex items-center gap-2 mt-1"
+                                    >
+                                        <Instagram size={14} />
+                                        @psi_tatianemiranda
+                                    </a>
                                 </div>
                             </motion.div>
                         </div>
