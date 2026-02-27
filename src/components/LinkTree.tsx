@@ -54,53 +54,53 @@ export const LinkTree = () => {
                 <div className="absolute bottom-0 left-0 w-full h-[600px] bg-gradient-to-t from-[#f0e6d5]/40 to-transparent" />
             </div>
 
-            <div className="relative z-10 max-w-[440px] mx-auto flex flex-col items-center">
+            <div className="relative z-10 max-w-[480px] mx-auto flex flex-col items-center">
 
                 {/* --- HEADER (MAX CONTRAST) --- */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex flex-col items-center mb-14 text-center"
+                    className="flex flex-col items-center mb-10 sm:mb-14 text-center w-full"
                 >
-                    <div className="relative mb-8">
+                    <div className="relative mb-6 sm:mb-8">
                         <motion.div
                             animate={{ rotate: 360 }}
                             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                            className="absolute -inset-6 border-2 border-gold/20 rounded-full border-dashed"
+                            className="absolute -inset-4 sm:-inset-6 border-2 border-gold/20 rounded-full border-dashed"
                         />
-                        <div className="relative w-36 h-36 rounded-full p-1.5 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden ring-4 ring-gold/10">
+                        <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full p-1.5 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden ring-4 ring-gold/10">
                             <img
                                 src="/profile.svg"
                                 alt="Tatiane Miranda"
-                                className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-700 shadow-inner"
+                                className="w-full h-full object-cover rounded-full transition-transform duration-700 shadow-inner"
                             />
                         </div>
                         <motion.div
                             animate={{ y: [0, -6, 0] }}
                             transition={{ duration: 3, repeat: Infinity }}
-                            className="absolute -bottom-1 -right-1 bg-white p-2.5 rounded-full shadow-xl border border-gold/20"
+                            className="absolute -bottom-1 -right-1 bg-white p-2 sm:p-2.5 rounded-full shadow-xl border border-gold/20"
                         >
-                            <Heart size={20} className="text-gold fill-gold/20" />
+                            <Heart size={18} className="text-gold fill-gold/20" />
                         </motion.div>
                     </div>
 
-                    <h1 className="text-[42px] font-serif text-primary tracking-tight mb-2 font-black italic drop-shadow-md">
+                    <h1 className="text-3xl sm:text-[42px] font-serif text-primary tracking-tight mb-2 font-black italic drop-shadow-md">
                         Tatiane Miranda
                     </h1>
-                    <div className="flex items-center gap-4 mb-3">
-                        <div className="h-[2px] w-8 bg-primary" />
-                        <p className="text-[13px] tracking-[0.6em] text-primary font-black uppercase">
+                    <div className="flex items-center gap-3 sm:gap-4 mb-3">
+                        <div className="h-[2px] w-6 sm:w-8 bg-primary" />
+                        <p className="text-[10px] sm:text-[13px] tracking-[0.4em] sm:tracking-[0.6em] text-primary font-black uppercase">
                             PSICÓLOGA CLÍNICA
                         </p>
-                        <div className="h-[2px] w-8 bg-primary" />
+                        <div className="h-[2px] w-6 sm:w-8 bg-primary" />
                     </div>
-                    <p className="text-secondary font-medium text-base italic opacity-80">
+                    <p className="text-secondary font-medium text-sm sm:text-base italic opacity-80 px-4">
                         Seu caminho de transformação começa aqui.
                     </p>
                 </motion.div>
 
                 {/* --- 3D POP-OUT CARDS (MAX CONTRAST) --- */}
-                <div className="w-full space-y-10">
+                <div className="w-full space-y-6 sm:space-y-10">
                     {links.map((link, idx) => (
                         <motion.a
                             key={idx}
@@ -110,12 +110,12 @@ export const LinkTree = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.15 }}
-                            className="group relative block w-full bg-white rounded-[45px] shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-[#f0f0f0] transition-all duration-500 overflow-visible"
+                            className="group relative block w-full bg-white rounded-[32px] sm:rounded-[45px] shadow-[0_15px_45px_rgba(0,0,0,0.08)] border border-[#f0f0f0] transition-all duration-500 overflow-visible"
                         >
-                            <div className="relative flex items-center p-4 h-[155px] overflow-visible">
+                            <div className="relative flex items-center p-3 sm:p-4 min-h-[130px] sm:h-[155px] overflow-visible">
 
                                 {/* 3D ACTUAL ICON SECTION */}
-                                <div className={`relative w-[125px] h-[125px] rounded-[40px] ${link.color} flex items-center justify-center shadow-inner overflow-visible ring-1 ring-black/5`}>
+                                <div className={`relative flex-shrink-0 w-[90px] h-[90px] sm:w-[125px] sm:h-[125px] rounded-[24px] sm:rounded-[40px] ${link.color} flex items-center justify-center shadow-inner overflow-visible ring-1 ring-black/5`}>
                                     {/* The Pop-Out Image Icon */}
                                     <motion.div
                                         whileHover={{
@@ -124,7 +124,7 @@ export const LinkTree = () => {
                                             rotateY: 15,
                                             filter: "drop-shadow(0 40px 40px rgba(0,0,0,0.3))"
                                         }}
-                                        className="relative z-20 w-[145%] h-[145%] pointer-events-none drop-shadow-2xl"
+                                        className="relative z-20 w-[130%] h-[130%] sm:w-[145%] sm:h-[145%] pointer-events-none drop-shadow-2xl"
                                     >
                                         <img
                                             src={link.iconPath}
@@ -134,21 +134,21 @@ export const LinkTree = () => {
                                     </motion.div>
 
                                     {/* Glass reflection */}
-                                    <div className="absolute inset-x-3 top-3 h-1/2 bg-white/30 rounded-t-[35px] rounded-br-[80%] opacity-50" />
+                                    <div className="absolute inset-x-2 sm:inset-x-3 top-2 sm:top-3 h-1/2 bg-white/30 rounded-t-[20px] sm:rounded-t-[35px] rounded-br-[80%] opacity-50" />
                                 </div>
 
                                 {/* TEXT CONTENT (MAX CONTRAST) */}
-                                <div className="flex-1 pl-8 pr-4">
-                                    <h3 className="text-primary font-serif text-[26px] font-black leading-tight mb-2 group-hover:text-gold transition-colors duration-300">
+                                <div className="flex-1 pl-4 sm:pl-8 pr-2">
+                                    <h3 className="text-primary font-serif text-xl sm:text-[26px] font-black leading-tight mb-1 sm:mb-2 group-hover:text-gold transition-colors duration-300">
                                         {link.title}
                                     </h3>
-                                    <p className="text-[14px] text-primary/90 font-bold mb-5 leading-tight">
+                                    <p className="text-[12px] sm:text-[14px] text-primary/90 font-bold mb-3 sm:mb-5 leading-tight">
                                         {link.subtitle}
                                     </p>
 
-                                    <div className="inline-flex items-center gap-3 bg-primary px-6 py-3 rounded-full text-white shadow-[0_10px_20px_rgba(58,82,126,0.3)] hover:bg-gold hover:shadow-gold/30 transition-all duration-500 transform group-hover:scale-105">
-                                        <span className="text-[11px] font-black tracking-[0.2em] uppercase">{link.cta}</span>
-                                        <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                    <div className="inline-flex items-center gap-2 sm:gap-3 bg-primary px-4 sm:px-6 py-2 sm:py-3 rounded-full text-white shadow-[0_10px_20px_rgba(58,82,126,0.3)] hover:bg-gold hover:shadow-gold/30 transition-all duration-500 transform group-hover:scale-105">
+                                        <span className="text-[10px] sm:text-[11px] font-black tracking-[0.1em] sm:tracking-[0.2em] uppercase">{link.cta}</span>
+                                        <ArrowUpRight size={14} className="sm:size-16 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                     </div>
                                 </div>
                             </div>

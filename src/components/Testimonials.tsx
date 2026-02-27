@@ -34,7 +34,7 @@ export const Testimonials = () => {
     <section id="testimonials" className="py-24 bg-[#FCF9F6] overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl text-primary mb-4">Relatos de Superação</h2>
+          <h2 className="text-4xl md:text-5xl text-primary mb-4 font-serif font-normal">Relatos de Superação</h2>
           <p className="text-primary/60 max-w-2xl mx-auto italic">
             Depoimentos reais preservando o sigilo e a ética profissional.
           </p>

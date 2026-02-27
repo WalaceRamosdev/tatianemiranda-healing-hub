@@ -54,7 +54,7 @@ export const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl text-primary font-serif"
+                className="text-4xl md:text-5xl text-primary font-serif font-normal"
               >
                 Quem Sou Eu
               </motion.h2>
@@ -62,18 +62,18 @@ export const About = () => {
                 initial={{ width: 0 }}
                 whileInView={{ width: '80px' }}
                 viewport={{ once: true }}
-                className="h-px bg-primary/30"
+                className="h-1 bg-gold/30 rounded-full"
               />
             </div>
 
-            <div className="space-y-4 text-primary/80 text-lg leading-relaxed font-light">
+            <div className="space-y-6 text-primary/80 text-lg leading-relaxed font-light">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                Sou <strong>Tatiane Miranda (CRP-10/11768)</strong>, psicóloga clínica apaixonada pela capacidade de transformação humana. Atuo com a Terapia Cognitivo-Comportamental (TCC) para ajudar adolescentes e adultos a ressignificarem seus pensamentos e emoções.
+                Sou <strong className="font-semibold text-primary">Tatiane Miranda (CRP-10/11768)</strong>, psicóloga clínica apaixonada pela capacidade de transformação humana. Atuo com a Terapia Cognitivo-Comportamental (TCC) para ajudar adolescentes e adultos a ressignificarem seus pensamentos e emoções.
               </motion.p>
 
               <motion.p

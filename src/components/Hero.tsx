@@ -134,10 +134,10 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-6xl md:text-8xl lg:text-9xl text-primary leading-[1] tracking-tighter"
+                className="text-6xl md:text-8xl lg:text-9xl text-primary leading-[1] tracking-tighter font-serif font-normal"
               >
                 Espaço <br />
-                <span className="italic font-light serif text-primary/40 block mt-2">transformador.</span>
+                <span className="italic font-light text-primary/40 block mt-2 leading-tight">transformador.</span>
               </motion.h1>
 
               <motion.p
