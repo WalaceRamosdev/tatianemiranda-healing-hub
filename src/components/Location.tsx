@@ -85,7 +85,9 @@ export const Location = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-serif text-xl text-primary font-medium">Contato</h4>
-                                    <p className="text-primary/70">(94) 98404-6655</p>
+                                    <a href="https://wa.me/5594984046655?text=Ol%C3%A1%20Tatiane!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" className="text-primary/70 hover:text-primary transition-colors">
+                                        (94) 98404-6655
+                                    </a>
                                     <p className="text-primary/70">contato@tatianemiranda.com.br</p>
                                     <a
                                         href="https://www.instagram.com/psi_tatianemiranda?utm_source=qr&igsh=MXc2OWs4NDd6d3RlOA%3D%3D"
