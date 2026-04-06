@@ -2,6 +2,8 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Leaf, Sparkles, MousePointer2 } from 'lucide-react';
 
+import profile1 from '../assets/profissional/Tatiane-Miranda-psiologa1.png';
+
 export const Hero = () => {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
@@ -96,7 +98,7 @@ export const Hero = () => {
               className="relative w-64 h-80 md:w-80 md:h-[450px] overflow-hidden rounded-[56px] shadow-[0_32px_64px_-16px_rgba(58,82,126,0.3)] z-10"
             >
               <img
-                src="/profile.svg"
+                src={profile1.src}
                 alt="Tatiane Miranda"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />

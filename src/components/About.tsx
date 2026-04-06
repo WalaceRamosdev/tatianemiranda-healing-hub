@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { GraduationCap, Heart, Sparkles } from 'lucide-react';
 
+import profile2 from '../assets/profissional/Tatiane-Miranda-psiologa2.png';
+
 export const About = () => {
   const timeline = [
     { icon: <GraduationCap size={20} />, title: 'Especialista em TCC', desc: 'Pós-graduada em Terapia Cognitivo-Comportamental e Avaliação Psicológica.' },
@@ -36,7 +38,7 @@ export const About = () => {
                 className="w-full h-full overflow-hidden rounded-[60%_40%_30%_70%/60%_30%_70%_40%] shadow-2xl bg-secondary group transition-all duration-700"
               >
                 <img
-                  src="/profile.svg"
+                  src={profile2.src}
                   alt="Tatiane Miranda - Psicóloga"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

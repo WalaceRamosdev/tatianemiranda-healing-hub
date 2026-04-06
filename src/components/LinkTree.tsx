@@ -8,6 +8,8 @@ import {
     Code2
 } from 'lucide-react';
 
+import avatar from '../assets/profissional/Tatiane-Miranda-psiologa1.png';
+
 export const LinkTree = () => {
     const links = [
         {
@@ -70,7 +72,7 @@ export const LinkTree = () => {
                         />
                         <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full p-1.5 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden ring-4 ring-gold/10">
                             <img
-                                src="/profile.svg"
+                                src={avatar.src}
                                 alt="Tatiane Miranda"
                                 className="w-full h-full object-cover rounded-full transition-transform duration-700 shadow-inner"
                             />
